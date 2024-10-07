@@ -1,7 +1,6 @@
 # BarberGO
 
 ### Estatísticas
-![Created at](https://img.shields.io/github/created-at/samueldelorenzi/barbergo?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/samueldelorenzi/barbergo?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/samueldelorenzi/barbergo?style=for-the-badge)
 ![Commits count](https://img.shields.io/github/commit-activity/t/samueldelorenzi/barbergo?style=for-the-badge)
