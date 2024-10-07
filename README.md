@@ -57,9 +57,15 @@ Clone o repositório do projeto para a sua máquina local:
 git clone https://github.com/samueldelorenzi/barbergo.git
 ```
 
-## ☕ Usando BarberGO
+### Passo 2:
 
-Para usar BarberGO, siga estas etapas:
+Garanta que você possui o PHP baixado em seu computador.
+
+```bash
+php -v
+```
+
+## ☕ Usando BarberGO
 
 Dentro da pasta sql está o arquivo ```barbergo_db.sql``` que é o arquivo de configuração do banco de dados da aplicação, basta criar o banco usando o MySQL Workbench ou similar e definir as conexões no arquivo ```banco.php``` dentro da pasta controllers:
 ```
@@ -68,6 +74,13 @@ $bdUsuario = 'root';
 $bdSenha = 'root';
 $bdBanco = 'barbergo';
 ```
+Após configurado basta acessar o diretório onde se encontra o app BarberGO e acessar pelo localhost
+
+## 🪒 Logo
+
+A criação da logo foi inspirada na união de dois elementos essenciais para o conceito do projeto: o relógio, que simboliza a gestão de horários, e a navalha, representando a essência da barbearia.
+
+<img src="https://raw.githubusercontent.com/samueldelorenzi/barbergo/refs/heads/main/anexos/barbergologo.jpg" alt="BarberGO logo" width="350px" height="350px">
 
 ## 🤝 Colaboradores
 
@@ -77,7 +90,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="https://www.linkedin.com/in/paulo-m%C3%A1rio-valente-bumba-126405260/" title="LinkedIn">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQHPdWjs4hdGMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1719023331041?e=1733961600&v=beta&t=huCmoflYvNLFazSFDWY_aGZbhFjNM0OJaIaT-3x4C8Y" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQHPdWjs4hdGMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1719023331041?e=1733961600&v=beta&t=huCmoflYvNLFazSFDWY_aGZbhFjNM0OJaIaT-3x4C8Y" width="100px;" alt="Foto do Paulo"/><br>
         <sub>
           <b>Paulo Bumba</b>
         </sub>
@@ -85,7 +98,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="https://www.linkedin.com/in/samueldelorenzi/" title="LinkedIn">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFdYE7vQTyqXA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720058448969?e=1733961600&v=beta&t=ccVL8BjRvxFrMiyfSQ3QXLb00gIk7OWkcdG2BSm7iuE" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFdYE7vQTyqXA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720058448969?e=1733961600&v=beta&t=ccVL8BjRvxFrMiyfSQ3QXLb00gIk7OWkcdG2BSm7iuE" width="100px;" alt="Foto do Samuel"/><br>
         <sub>
           <b>Samuel De Lorenzi</b>
         </sub>
@@ -96,6 +109,14 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         <img src="https://media.licdn.com/dms/image/v2/D4D03AQGOczBgQCBtSA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1665170990118?e=1733961600&v=beta&t=ZGNdDzQgZ19OCEaK7UHcI8kFYdoBlPYAR1G6WYM6Nd0" width="100px;" alt="Foto do Wesllen"/><br>
         <sub>
           <b>Wesllen Langaro</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/" title="LinkedIn">
+        <img src="#" width="100px;" alt="Wilian foto"/><br>
+        <sub>
+          <b>Wilian</b>
         </sub>
       </a>
     </td>
