@@ -3,7 +3,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/samueldelorenzi/barbergo?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/samueldelorenzi/barbergo?style=for-the-badge)
 
-<img src="https://raw.githubusercontent.com/samueldelorenzi/ProgramacaoII/refs/heads/main/Atividades/barbergo/anexos/readme_image.png" alt="BarberGO">
+<img src="https://raw.githubusercontent.com/samueldelorenzi/barbergo/refs/heads/main/anexos/readme_image.png" alt="BarberGO">
 
 > Projeto criado como trabalho final da matéria de Programação II, da graduação em Ciência da Computação na UNOESC Videira.
 
