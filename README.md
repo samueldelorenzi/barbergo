@@ -76,7 +76,7 @@ $bdBanco = 'barbergo';
 ```
 Após configurado basta acessar o diretório onde se encontra o app BarberGO e acessar pelo localhost
 
-## 🪒 Logo
+## 🖼️ Logo
 
 A criação da logo foi inspirada na união de dois elementos essenciais para o conceito do projeto: o relógio, que simboliza a gestão de horários, e a navalha, representando a essência da barbearia.
 
