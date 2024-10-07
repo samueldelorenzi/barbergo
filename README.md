@@ -114,9 +114,9 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="https://www.linkedin.com/" title="LinkedIn">
-        <img src="#" width="100px;" alt="Wilian foto"/><br>
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFHeGRyYIMzMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718290863814?e=1733961600&v=beta&t=Aon4DgIZRcGf4rF0RQBJAMFzWALMtXaUpSGHtl-9T7E" width="100px;" alt="Wilian foto"/><br>
         <sub>
-          <b>Wilian</b>
+          <b>Willian Ferreira</b>
         </sub>
       </a>
     </td>
