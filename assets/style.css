@@ -10,14 +10,58 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #f5f5f5;
     background-image: linear-gradient(rgba(17, 10, 7, 0.7), rgba(17, 10, 7, 0.7)), url('../anexos/background.jpg');
     background-size: cover;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+#header-left, #header-right {
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+#header-left a {
+    font-weight: 500;
+    text-decoration: none;
+    color: black
+}
+#header-left a:hover {
+    color: rgba(17, 10, 7, 0.7);
+}
+
+#header-right a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    background-color: rgb(160, 0, 0);
+    margin-left: 10px;
+}
+#header-right a:hover {
+    background-color: rgb(200, 0, 0);
+}
+
 .title {
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 13rem;
 }
 
 h1 {
@@ -25,6 +69,7 @@ h1 {
     font-size: 60px;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 }
+
 h3 {
     color: #fff;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
@@ -38,6 +83,7 @@ h3 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     width: 25%;
     text-align: center;
+    margin-top: 20px;
 }
 
 label {

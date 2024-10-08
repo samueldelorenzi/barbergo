@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 function adicionar_cliente($conexao, $cadastro)
 {
     $sqlGravar = "INSERT INTO cliente (nome, sobrenome, email, senha) VALUES (?, ?, ?, ?)";
@@ -45,6 +45,8 @@ function verificar_login($conexao, $login)
             mysqli_stmt_close($stmt);
             
             if (password_verify($login['senha'], $senha)) {
+                $_SESSION['id_cliente'] = $id;
+
                 return [
                     'success' => true, 
                     'user' => [
@@ -98,13 +100,43 @@ function adicionar_agendamento($conexao, $agendamento, $id_cliente)
     
     if ($stmt) 
     {
-        mysqli_stmt_bind_param($stmt, "ssss", $id_cliente, $id_servico, $agendamento['dia'], $agendamento['hora']);
+        mysqli_stmt_bind_param($stmt, "ssss", $id_cliente, $agendamento['servico'], $agendamento['data'], $agendamento['hora']);
         
         $result = mysqli_stmt_execute($stmt);
         
         mysqli_stmt_close($stmt);
         
         return $result;
+    } 
+    else 
+    {
+        return false;
+    }
+}
+
+function verificar_horario($conexao, $agendamento) 
+{
+    $sqlVerificar = "SELECT COUNT(*) FROM agendamento WHERE dia = ? AND hora = ?";
+
+    $stmt = mysqli_prepare($conexao, $sqlVerificar);
+
+    if ($stmt) 
+    {
+        mysqli_stmt_bind_param($stmt, "ss", $agendamento['dia'], $agendamento['hora']);
+        
+        mysqli_stmt_execute($stmt);
+        
+        mysqli_stmt_bind_result($stmt, $count);
+        
+        mysqli_stmt_fetch($stmt);
+        
+        mysqli_stmt_close($stmt);
+        
+        if ($count == 0) {
+            return adicionar_agendamento($conexao, $agendamento, $_SESSION['id_cliente']);
+        } else {
+            return false;
+        }
     } 
     else 
     {

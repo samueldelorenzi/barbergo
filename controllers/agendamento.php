@@ -6,22 +6,23 @@ include '../helpers/auxiliares.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['servico']) && !empty($_POST['servico']) && isset($_POST['date']) && !empty($_POST['date']) && isset($_POST['time']) && !empty($_POST['time'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['data']) && !empty($_POST['data']) && isset($_POST['hora']) && !empty($_POST['hora'])) {
+    echo "Entrou";
     $agendamento = [
         'servico' => mysqli_real_escape_string($conexao, trim($_POST['servico'])),
-        'date' => mysqli_real_escape_string($conexao, trim($_POST['date'])),
-        'time' => mysqli_real_escape_string($conexao, trim($_POST['time']))
+        'data' => mysqli_real_escape_string($conexao, trim($_POST['data'])),
+        'hora' => mysqli_real_escape_string($conexao, trim($_POST['hora']))
     ];
 
-    if (verificar_login($conexao, $login)['success']) {
+    if (verificar_horario($conexao, $agendamento)) {
+        $_SESSION['success_message'] = "Horário marcado!";
         header('Location: ../views/form_agendamento.php');
-        $_SESSION['usuario_logado'] = true;
     } 
     else 
     {
-        $_SESSION['error_message'] = "Usuário ou senha incorretos.";
-        header('Location: ../views/form_login.php');
+        $_SESSION['error_message'] = "Horário indisponível";
+        header('Location: ../views/form_agendamento.php');
     }
     
-} 
+}
 exit();

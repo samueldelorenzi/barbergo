@@ -18,6 +18,16 @@ if (!isset($_SESSION['usuario_logado'])) {
     <link rel="icon" href="../anexos/icone.png" type="image/x-icon">
 </head>
 <body>
+    <div class="header">
+        <div id="header-left">
+            <a href="../controllers/meus_agendamentos.php">Meus agendamentos</a>
+        </div>
+        <div id="header-right">
+            <p><?php echo $_SESSION['usuario_email']; ?></p>
+            <a href="../controllers/logout.php">Sair</a>
+        </div>
+    </div>
+
     <div class="title">
         <h1>BarberGO</h1>
         <h3>Agendamento</h3>
@@ -26,9 +36,9 @@ if (!isset($_SESSION['usuario_logado'])) {
         <form method="POST" action="../controllers/agendamento.php">
             <label for="servico">Qual serviço está procurando?</label>
             <select id="servico" name="servico" required>
-                <option value="corte">Corte</option>
-                <option value="barba">Barba</option>
-                <option value="corte e barba">Corte e Barba</option>
+                <option value="0">Corte</option>
+                <option value="1">Barba</option>
+                <option value="2">Corte e Barba</option>
             </select>
 
             <label for="data">Qual melhor dia para atendê-lo?</label>
@@ -36,6 +46,22 @@ if (!isset($_SESSION['usuario_logado'])) {
 
             <label for="hora">Qual melhor horário para atendê-lo?</label>
             <input type="time" id="hora" name="hora" required>
+
+            <?php
+                    session_start();
+
+                    if (isset($_SESSION['success_message'])) 
+                    {
+                        echo '<p style="color: green;">' . $_SESSION['success_message'] . '</p>';
+                        unset($_SESSION['success_message']);
+                    }
+                    else
+                    {
+                        echo '<p style="color: red;">' . $_SESSION['error_message'] . '</p>';
+                        unset($_SESSION['error_message']);
+                    }
+            ?>
+            <br>
 
             <input type="submit" value="Agendar">
         </form>

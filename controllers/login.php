@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) && !empty($_
     if (verificar_login($conexao, $login)['success']) {
         header('Location: ../views/form_agendamento.php');
         $_SESSION['usuario_logado'] = true;
+        $_SESSION['usuario_email'] = $_POST['email'];
     } 
     else 
     {
