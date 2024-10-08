@@ -20,7 +20,7 @@ if (!isset($_SESSION['usuario_logado'])) {
 <body>
     <div class="header">
         <div id="header-left">
-            <a href="../controllers/meus_agendamentos.php">Meus agendamentos</a>
+            <a href="../views/meus_agendamentos.php">Meus agendamentos</a>
         </div>
         <div id="header-right">
             <p><?php echo $_SESSION['usuario_email']; ?></p>
