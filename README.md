@@ -113,7 +113,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="https://www.linkedin.com/" title="LinkedIn">
+      <a href="https://www.linkedin.com/in/willian-ferreira-a09730219" title="LinkedIn">
         <img src="https://media.licdn.com/dms/image/v2/D4D03AQFHeGRyYIMzMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718290863814?e=1733961600&v=beta&t=Aon4DgIZRcGf4rF0RQBJAMFzWALMtXaUpSGHtl-9T7E" width="100px;" alt="Wilian foto"/><br>
         <sub>
           <b>Willian Ferreira</b>
