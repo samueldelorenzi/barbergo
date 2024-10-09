@@ -113,6 +113,46 @@ function adicionar_agendamento($conexao, $agendamento, $id_cliente)
         return false;
     }
 }
+function get_agendamentos($conexao, $id_cliente)
+{
+    $sql = "SELECT id_servico, dia, hora FROM agendamento WHERE id_cliente = ?";
+    
+    $stmt = mysqli_prepare($conexao, $sql);
+    
+    if ($stmt) 
+    {
+        mysqli_stmt_bind_param($stmt, "s", $id_cliente);
+        
+        mysqli_stmt_execute($stmt);
+        
+        mysqli_stmt_bind_result($stmt, $id_servico, $dia, $hora);
+        
+        $agendamentos = [];
+        
+        while (mysqli_stmt_fetch($stmt)) 
+        {
+            $agendamentos[] = [
+                'id_servico' => $id_servico,
+                'dia' => $dia,
+                'hora' => $hora
+            ];
+        }
+        
+        mysqli_stmt_close($stmt);
+        
+        return $agendamentos;
+    } 
+    else 
+    {
+        return false;
+    }
+}
+
+function converte_data_usuario($data)
+{
+    $data = explode("-", $data);
+    return $data[2] . "/" . $data[1] . "/" . $data[0];
+}
 
 function verificar_horario($conexao, $agendamento) 
 {
