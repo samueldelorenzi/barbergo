@@ -74,23 +74,35 @@ function verificar_login($conexao, $login)
     }
 }
 
-/*function get_cliente_byemail($conexao, $email=$_POST['email']) {
-    $sql = "SELECT * FROM cliente WHERE email = ?";
+function get_servico_by_id($conexao, $id_servico)
+{
+    $sql = "SELECT nome, descricao, preco FROM servico WHERE id = ?";
+    
     $stmt = mysqli_prepare($conexao, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $email);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_store_result($stmt);
-    mysqli_stmt_bind_result($stmt, $id, $nome, $sobrenome, $email, $senha);
-    mysqli_stmt_fetch($stmt);
-    mysqli_stmt_close($stmt);
-    return [
-        'id' => $id,
-        'nome' => $nome,
-        'sobrenome' => $sobrenome,
-        'email' => $email,
-        'senha' => $senha
-    ];
-}*/
+    
+    if ($stmt) 
+    {
+        mysqli_stmt_bind_param($stmt, "s", $id_servico);
+        
+        mysqli_stmt_execute($stmt);
+        
+        mysqli_stmt_bind_result($stmt, $nome, $descricao, $preco);
+        
+        mysqli_stmt_fetch($stmt);
+        
+        mysqli_stmt_close($stmt);
+        
+        return [
+            'nome' => $nome,
+            'descricao' => $descricao,
+            'preco' => $preco
+        ];
+    } 
+    else 
+    {
+        return "";
+    }
+}
 
 function adicionar_agendamento($conexao, $agendamento, $id_cliente)
 {
@@ -115,7 +127,7 @@ function adicionar_agendamento($conexao, $agendamento, $id_cliente)
 }
 function get_agendamentos($conexao, $id_cliente)
 {
-    $sql = "SELECT id_servico, dia, hora FROM agendamento WHERE id_cliente = ?";
+    $sql = "SELECT id_servico, dia, hora FROM agendamento WHERE id_cliente = ? AND CONCAT(dia, ' ', hora) > NOW()";
     
     $stmt = mysqli_prepare($conexao, $sql);
     
@@ -181,5 +193,39 @@ function verificar_horario($conexao, $agendamento)
     else 
     {
         return false;
+    }
+}
+
+function exibe_horarios($selectedDate, $currentDateTime)
+{
+    $startHour = 8;
+    $endHour = 18;
+    $today = new DateTime();
+    $isToday = $selectedDate->format('Y-m-d') == $today->format('Y-m-d');
+    
+    for ($hour = $startHour; $hour < $endHour; $hour++) 
+    {
+        for ($minute = 0; $minute < 60; $minute += 30) 
+        {
+            $slotTime = clone $today;
+            $slotTime->setTime($hour, $minute);
+            $slotTime->setDate($selectedDate->format('Y'), $selectedDate->format('m'), $selectedDate->format('d'));
+            
+            if ($isToday) 
+            {
+                if ($slotTime > $currentDateTime) 
+                {
+                    echo '<div class="schedule-slot">';
+                    echo $slotTime->format('H:i');
+                    echo '</div>';
+                }
+            } 
+            else 
+            {
+                echo '<div class="schedule-slot">';
+                echo $slotTime->format('H:i');
+                echo '</div>';
+            }
+        }
     }
 }
