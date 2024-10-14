@@ -45,7 +45,7 @@ if (!isset($_SESSION['usuario_logado'])) {
             <input type="date" id="data" name="data" required>
 
             <label for="hora">Qual melhor horário para atendê-lo?</label>
-            <input type="time" id="hora" name="hora" required>
+            <input type="time" id="hora" name="hora" min="09:00" max="18:00" step="1800" required>
 
             <?php
                     session_start();
