@@ -185,3 +185,23 @@ fieldset {
 .agendamentos td {
     color: #333;
 }
+
+#div-horarios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.horario {
+    background-color: #492d1f;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.horario:hover {
+    background-color: #88513a;
+    cursor: pointer;
+}
