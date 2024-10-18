@@ -17,17 +17,15 @@
   <title>Cadastro - BarberGO</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="shortcut icon" href="anexos/icone.png" type="image/x-icon">
 </head>
 <body class="background-image">
     <div class="container d-flex align-items-center justify-content-center vh-100">
         <div class="bg-white rounded col-8 col-lg-4 shadow-lg p-4">
             <div class="text-center">
-                <img src="assets/img/icone.png" alt="Ícone Barbearia" class="img shadow">
+                <img src="../assets/img/icone.png" alt="Ícone Barbearia" class="img shadow">
                 <h1 class="fs-4">Crie sua conta e comece a usar o BarberGO</h1>
             </div>
             <form method="POST" action="controllers/cadastro.php" class="needs-validation pb-3" novalidate>
@@ -64,12 +62,14 @@
                     }
                 ?>
 
-                <div class="text-center">
-                    <a href="views/form_login.php" class="nav-link text-decoration-none">Já possui cadastro? Faça login</a>
-                </div>
+                
 
                 <button type="submit" name="gravar" class="btn btn-primary w-100 mt-3">Cadastrar-se</button>
             </form>
+            <hr class="w-75 m-auto py-3">
+            <div class="text-center">
+                    <a href="./form_login.php" class="nav-link text-decoration-none">Já possui cadastro? Faça login</a>
+                </div>
         </div>
     </div>
 
