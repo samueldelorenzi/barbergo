@@ -1,23 +1,24 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
-session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
-$selectedDate = isset($_POST['data']) ? new DateTime($_POST['data']) : new DateTime();
+    $selectedDate = isset($_POST['data']) ? new DateTime($_POST['data']) : new DateTime();
 
-if (!isset($_SESSION['usuario_logado'])) {
-    header("Location: form_login.php");
-    exit();
-}
+    if (!isset($_SESSION['usuario_logado'])) {
+        header("Location: form_login.php");
+        exit();
+    }
 
-date_default_timezone_set('America/Sao_Paulo');
-
+    date_default_timezone_set('America/Sao_Paulo');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1920x1080, initial-scale=1.0">

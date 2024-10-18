@@ -1,5 +1,14 @@
+<?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1920x1080, initial-scale=1.0">
@@ -21,18 +30,16 @@
             <input type="password" id="senha" name="senha" placeholder="Senha" required>
 
             <?php
-                    session_start();
-
-                    if (isset($_SESSION['success_message'])) 
-                    {
-                        echo '<p style="color: green;">' . $_SESSION['success_message'] . '</p>';
-                        unset($_SESSION['success_message']);
-                    }
-                    else
-                    {
-                        echo '<p style="color: red;">' . $_SESSION['error_message'] . '</p>';
-                        unset($_SESSION['error_message']);
-                    }
+                if (isset($_SESSION['success_message'])) 
+                {
+                    echo '<p style="color: green;">' . $_SESSION['success_message'] . '</p>';
+                    unset($_SESSION['success_message']);
+                }
+                else if (isset($_SESSION['error_message']))
+                {
+                    echo '<p style="color: red;">' . $_SESSION['error_message'] . '</p>';
+                    unset($_SESSION['error_message']);
+                }
             ?>
 
             <a href="../index.php" id="link">Ainda não possui cadastro? Clique aqui</a>
