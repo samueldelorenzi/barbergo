@@ -1,5 +1,16 @@
+<?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
+
+<html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +28,7 @@
                 <img src="../assets/img/icone.png" alt="Ícone Barbearia" class="img shadow">
                 <h1 class="fs-4 text-center py-3">Faça login para desfrutar da sua barbearia</h1>
             </div>
-            <form action="" method="post" class="needs-validation pb-3" autocomplete="on" novalidate>
+            <form action="../controllers/login.php" method="post" class="needs-validation pb-3" autocomplete="on" novalidate>
                 <div class="input-group mb-4">
                     <input type="text" name="email" id="email" class="form-control" placeholder="Email ou Nome do Usuário" aria-label="Email ou Nome do Usuário" required autocomplete="email">
                     <label for="email" class="input-group-text" aria-label="Ícone de Email"><i class="fa-solid fa-envelope fs-4"></i></label>
@@ -29,7 +40,7 @@
                     </div>
                 </div>
                 <div class="input-group">
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Senha" autocomplete="current-password" required>
+                    <input type="password" name="senha" id="password" class="form-control" placeholder="Senha" autocomplete="current-password" required>
                     <label for="password" class="input-group-text">
                     <i class="fa-solid fa-lock fs-4"></i>
                     </label>
@@ -75,8 +86,10 @@
         }
     ?>
 
+
   <!-- Bootstrap JS and dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/valid.js"></script>
+
 </body>
 </html>

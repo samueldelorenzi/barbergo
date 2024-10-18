@@ -1,5 +1,16 @@
+<?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
+
+<html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,13 +51,13 @@
                 </div>
 
                 <?php
-                    session_start();
-
                     if (isset($_SESSION['success_message'])) {
                         echo '<p class="text-success text-center">' . $_SESSION['success_message'] . '</p>';
                         unset($_SESSION['success_message']);
+
                     } elseif (isset($_SESSION['error_message'])) {
                         echo '<p class="text-danger text-center">' . $_SESSION['error_message'] . '</p>';
+
                         unset($_SESSION['error_message']);
                     }
                 ?>
