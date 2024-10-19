@@ -13,7 +13,7 @@
 ![CSS3](https://img.shields.io/badge/CSS-000000?style=for-the-badge&logo=css3&logoColor=white&logoSize=auto&color=blue)
 ![MySQL](https://img.shields.io/badge/MYSQL-blue?style=for-the-badge&logo=mysql&logoColor=white&logoSize=auto)
 
-<img src="https://raw.githubusercontent.com/samueldelorenzi/barbergo/refs/heads/main/anexos/readme_image.png" alt="BarberGO">
+<img src="https://github.com/samueldelorenzi/barbergo/blob/main/assets/img/readme_image.png" alt="BarberGO">
 
 > BarberGO é um projeto desenvolvido como trabalho final da disciplina de Programação II do curso de Ciência da Computação na UNOESC Videira. O sistema foi desenvolvido para gerenciar horários em barbearias, utilizando PHP, CSS e HTML em uma arquitetura MVC (Model-View-Controller), com um banco de dados MySQL para armazenamento das informações.
 
@@ -80,7 +80,7 @@ Após configurado basta acessar o diretório onde se encontra o app BarberGO e a
 
 A criação da logo foi inspirada na união de dois elementos essenciais para o conceito do projeto: o relógio, que simboliza a gestão de horários, e a navalha, representando a essência da barbearia.
 
-<img src="https://raw.githubusercontent.com/samueldelorenzi/barbergo/refs/heads/main/anexos/barbergologo.jpg" alt="BarberGO logo" width="350px" height="350px">
+<img src="https://github.com/samueldelorenzi/barbergo/blob/main/assets/img/barbergologo.jpg" alt="BarberGO logo" width="350px" height="350px">
 
 ## 🤝 Colaboradores
 
