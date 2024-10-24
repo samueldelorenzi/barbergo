@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="py-3">
-                    <a href="#" class="nav-link text-decoration-none">Esqueceu a senha?</a>
+                    <a href="./form_esqueceu_senha.php" class="nav-link text-decoration-none">Esqueceu a senha?</a>
                 </div>
                 <div class="form-switch pb-3">
                     <input type="checkbox" name="remember" id="remember" class="form-check-input" required>
