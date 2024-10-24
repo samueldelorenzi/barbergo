@@ -10,6 +10,13 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nome']) && !empty($_POST['nome'])) {
+    $cliente = get_cliente_by_email($conexao, $_POST['email']);
+
+    if (!empty($cliente)) {
+        $_SESSION['error_message'] = "Ops, este email já está cadastrado. Faça login.";
+        header('Location: ../index.php');
+        exit();
+    }
     $cadastro = [
         'nome' => mysqli_real_escape_string($conexao, trim($_POST['nome'])),
         'sobrenome' => mysqli_real_escape_string($conexao, trim($_POST['sobrenome'])),
