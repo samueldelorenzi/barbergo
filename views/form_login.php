@@ -29,37 +29,36 @@
                 <h1 class="fs-4 text-center py-3">Faça login para desfrutar da sua barbearia</h1>
             </div>
             <form action="../controllers/login.php" method="post" class="needs-validation pb-3" autocomplete="on" novalidate>
-                <div class="input-group mb-4">
-                    <input type="text" name="email" id="email" class="form-control" placeholder="Email ou Nome do Usuário" aria-label="Email ou Nome do Usuário" required autocomplete="email">
-                    <label for="email" class="input-group-text" aria-label="Ícone de Email"><i class="fa-solid fa-envelope fs-4"></i></label>
-                    <div class="invalid-feedback">
-                        Preencha o teu Email.
-                    </div>
-                    <div class="valid-feedback">
-                        Email Preenchido
-                    </div>
+            <div class="input-group mb-4">
+                <input type="text" name="email" id="email" class="form-control" placeholder="Email" aria-label="Email" required autocomplete="email">
+                <label for="email" class="input-group-text">
+                    <i class="fa-solid fa-envelope fa-lg px-1"></i>
+                </label>
+                <div class="invalid-feedback">
+                    Preencha o teu Email.
                 </div>
-                <div class="input-group">
-                    <input type="password" name="senha" id="password" class="form-control" placeholder="Senha" autocomplete="current-password" required>
-                    <label for="password" class="input-group-text">
-                    <i class="fa-solid fa-lock fs-4"></i>
-                    </label>
-                    <div class="invalid-feedback">
-                        Preencha a tua senha.
-                    </div>
-                    <div class="valid-feedback">
-                        Senha Preenchida
-                    </div>
+                <div class="valid-feedback">
+                    Email Preenchido
                 </div>
+            </div>
+            <div class="input-group">
+                <input type="password" name="senha" id="password" class="form-control" placeholder="Senha" autocomplete="current-password" required>
+                <label for="password" class="input-group-text">
+                    <i class="fa-solid fa-lock fa-lg px-1"></i>
+                </label>
+                <div class="invalid-feedback">
+                    Preencha a tua senha.
+                </div>
+                <div class="valid-feedback">
+                    Senha Preenchida
+                </div>
+            </div>
                 <div class="py-3">
                     <a href="./form_esqueceu_senha.php" class="nav-link text-decoration-none">Esqueceu a senha?</a>
                 </div>
                 <div class="form-switch pb-3">
-                    <input type="checkbox" name="remember" id="remember" class="form-check-input" required>
+                    <input type="checkbox" name="remember" id="remember" class="form-check-input" >
                     <label for="remember" class="form-check-label">Lembrar de mim</label>
-                    <div class="invalid-feedback">
-                        Este campo é obrigatório assinar.
-                    </div>
                     <div class="valid-feedback">
                         Campo assinado
                     </div>

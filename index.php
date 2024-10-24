@@ -17,6 +17,8 @@
   <title>Cadastro - BarberGO</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="shortcut icon" href="anexos/icone.png" type="image/x-icon">
@@ -31,21 +33,21 @@
             <form method="POST" action="controllers/cadastro.php" class="needs-validation pb-3" novalidate>
                 <div class="input-group mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="Nome" required>
-                    <label class="input-group-text"><i class="fa-solid fa-user"></i></label>
+                    <label class="input-group-text"><i class="fa-solid fa-user fa-lg"></i></label>
                     <div class="invalid-feedback">Preencha o teu nome.</div>
                     <div class="valid-feedback">Nome válido!</div>
                 </div>
 
                 <div class="input-group mb-3">
                     <input type="email" name="email" class="form-control" placeholder="E-mail" required>
-                    <label class="input-group-text"><i class="fa-solid fa-envelope"></i></label>
+                    <label class="input-group-text"><i class="bi bi-envelope-fill fa-md "></i></label>
                     <div class="invalid-feedback">Preencha o teu e-mail.</div>
                     <div class="valid-feedback">E-mail válido!</div>
                 </div>
 
                 <div class="input-group mb-3">
                     <input type="password" name="senha" class="form-control" placeholder="Senha" required maxlength="16">
-                    <label class="input-group-text"><i class="fa-solid fa-lock"></i></label>
+                    <label class="input-group-text"><i class="fa-solid fa-lock fa-lg"></i></label>
                     <div class="invalid-feedback">Preencha a tua senha.</div>
                     <div class="valid-feedback">Senha válida!</div>
                 </div>
