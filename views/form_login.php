@@ -55,7 +55,7 @@
                     <a href="#" class="nav-link text-decoration-none">Esqueceu a senha?</a>
                 </div>
                 <div class="form-switch pb-3">
-                    <input type="checkbox" name="remember" id="remember" class="form-check-input" required>
+                    <input type="checkbox" name="remember" id="remember" class="form-check-input">
                     <label for="remember" class="form-check-label">Lembrar de mim</label>
                     <div class="invalid-feedback">
                         Este campo é obrigatório assinar.
