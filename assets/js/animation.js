@@ -1,7 +1,7 @@
 
 const animacao = new ScrollReveal();
-animacao.reveal('.testimonial', {
-    origin: 'bottom',
+animacao.reveal('.card', {
+    origin: 'right',
     distance: '30%',
     duration:2000,
     
@@ -10,7 +10,7 @@ animacao.reveal('.testimonial', {
 });
 
 animacao.reveal('.services', {
-    origin: 'bottom',
+    origin: 'top',
     distance: '30%',
     duration:2000,
     delay:250,
