@@ -11,7 +11,6 @@
     --cor3: rgba(255, 255, 0, 0.253);
 }
 
-/* Estilos gerais */
 h1 {
     font-size: 30px;
     margin-top: 10px;
@@ -62,7 +61,7 @@ body {
     background-color: #e0e0e0;
 }
 
-/* Ajustes gerais nos cards */
+
 .card {
     display: flex;
     flex-direction: column;
@@ -78,7 +77,7 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Efeito hover nos cards */
+
 .card:hover {
     transform: scale(1.03);
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
@@ -124,6 +123,9 @@ body {
     .card {
         flex: 1 1 calc(100% / 4 - 20px);
         margin: 15px;
+    }
+    .btn-outline-warning:hover{
+        border-bottom: 2px solid white;
     }
 }
 
