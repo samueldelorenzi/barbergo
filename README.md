@@ -90,7 +90,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="https://www.linkedin.com/in/paulo-m%C3%A1rio-valente-bumba-126405260/" title="LinkedIn">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQHPdWjs4hdGMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1719023331041?e=1733961600&v=beta&t=huCmoflYvNLFazSFDWY_aGZbhFjNM0OJaIaT-3x4C8Y" width="100px;" alt="Foto do Paulo"/><br>
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGrUmzQ8aWS-A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729769698428?e=1735171200&v=beta&t=jkb-a_czGO2KPdmOEJTtqdiXa2uyKwKLbWQ8onjDLis" width="100px;" alt="Foto do Paulo"/><br>
         <sub>
           <b>Paulo Bumba</b>
         </sub>
