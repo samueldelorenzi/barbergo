@@ -26,7 +26,7 @@
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg" href="#">Cadastro</a></li>
             </ul>
             <div class="btn-header">
-                <a href="#" class="btn btn-warning active login w-100">Login</a>
+                <a href="views/form_login" class="btn btn-warning active login w-100">Login</a>
             </div>
         </div>
     </div>
@@ -65,7 +65,8 @@
         <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet</p>
     </div>
 </section>
-<h2 class="text-center">Nossos Serviços</h2>
+<h2 class="text-center my-md-4">Nossos Serviços</h2>
+<h3 class="text-center ">Escolha as seus <span  class="text-warning">Gostos</span> especiais na BarberGO</h3>
 <section id="services " class="my-5 services">
     <div class="container text-center">
        
@@ -76,7 +77,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Corte de Cabelo</h5>
                         <p class="card-text">Experiência de corte personalizada com os melhores profissionais.</p>
-                        <button class="btn btn-warning w-100">Agende Agora</button>
+                        <a href="views/form_login.php" class="btn btn-warning w-100">Agende Agora</a>
                     </div>
                 </div>
             </div>
@@ -86,7 +87,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Barba</h5>
                         <p class="card-text">Deixe sua barba impecável com nossos serviços de barbearia.</p>
-                        <button class="btn btn-warning w-100">Agende Agora</button>
+                        <a href="views/form_login.php" class="btn btn-warning w-100">Agende Agora</a>
                     </div>
                 </div>
             </div>
@@ -96,7 +97,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Coloração</h5>
                         <p class="card-text">Transforme seu visual com nossas opções de coloração.</p>
-                        <button class="btn btn-warning w-100">Agende Agora</button>
+                        <a href="views/form_login.php" class="btn btn-warning w-100">Agende Agora</a>
                     </div>
                 </div>
             </div>
@@ -105,6 +106,7 @@
 </section>
 
 <h2 class="mb-4 text-center">Nossos Barbeiros</h2>
+<h3 class="text-center my-md-3">Nossa Equipa esta a sua disposição </h3>
 <section id="barbers" class="my-5 ">
     <div class="container text-center barbers">
         
@@ -136,6 +138,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Carlos Eduardo</h5>
                         <p class="card-text">Barbeiro reconhecido pela qualidade e eficiência nos serviços.</p>
+                        
                     </div>
                 </div>
             </div>
@@ -151,15 +154,18 @@
             <a href="#" class="nav-link">Privacidade</a><br>
             <a href="#" class="nav-link">Termos de Uso</a>
         </div>
+        <hr class="w-75 mx-auto d-md-none">
         <div class="col-md-3 mb-3 text-center text-md-left">
             <h3 class="fs-5">Equipe</h3>
             <a href="#" class="nav-link">Sobre Nós</a>
         </div>
+        <hr class="w-75 mx-auto d-md-none">
         <div class="col-md-3 mb-3 text-center text-md-left">
             <h3 class="fs-5">Feedback e Suporte</h3>
             <a href="#" class="nav-link">Feedback e Avaliações</a><br>
             <a href="#" class="nav-link">Suporte e Contato</a>
         </div>
+        <hr class="w-75 mx-auto d-md-none">
         <div class="col-md-3 mb-3 text-center text-md-left">
             <h3 class="fs-5">Siga-nos nas Redes Sociais</h3>
             <div class="btn-group">
@@ -174,123 +180,9 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-     const testimonials_barber_1 = [
-            {
-                img: "https://i.pravatar.cc/150?img=7",
-                quote: "Serviço impecável! O atendimento da BarberGO é excelente e o corte ficou perfeito.",
-                author: "João Almeida"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=8",
-                quote: "A BarberGO superou minhas expectativas. Ambiente agradável e profissionais capacitados.",
-                author: "Marcelo Costa"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=9",
-                quote: "Muito satisfeito com o corte e a barba. Com certeza voltarei.",
-                author: "Pedro Oliveira"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=10",
-                quote: "Ótima experiência! A BarberGO é a melhor barbearia que já frequentei.",
-                author: "Gustavo Lima"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=11",
-                quote: "Atendimento excelente e resultado melhor ainda. Recomendo muito.",
-                author: "Lucas Moreira"
-            }
-        ];
 
-        const testimonials_barber_2 = [
-            {
-                img: "https://i.pravatar.cc/150?img=12",
-                quote: "Adorei o ambiente e o serviço. Fui muito bem atendido!",
-                author: "Fábio Santos"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=13",
-                quote: "A BarberGO sempre me atende com perfeição. Altamente recomendada!",
-                author: "Rafael Souza"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=14",
-                quote: "Cortes modernos e barbeiros muito profissionais. Experiência incrível.",
-                author: "Mateus Dias"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=15",
-                quote: "Ambiente acolhedor e resultado perfeito no corte e barba.",
-                author: "Leonardo Alves"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=16",
-                quote: "Recomendo para todos! Atendimento e serviço impecáveis.",
-                author: "Thiago Ramos"
-            }
-        ];
 
-        const testimonials_barber_3 = [
-            {
-                img: "https://i.pravatar.cc/150?img=17",
-                quote: "Melhor barbearia da cidade! Muito atenciosos e serviço de qualidade.",
-                author: "Carlos Eduardo"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=18",
-                quote: "Ótimo atendimento, profissionais qualificados. Voltarei com certeza.",
-                author: "André Oliveira"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=19",
-                quote: "Corte rápido e bem feito. Serviço excelente.",
-                author: "José Roberto"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=20",
-                quote: "Gostei muito do corte e da barba. Vale cada centavo.",
-                author: "Bruno Lima"
-            },
-            {
-                img: "https://i.pravatar.cc/150?img=21",
-                quote: "Ambiente confortável e profissionais experientes. Recomendo!",
-                author: "Henrique Cardoso"
-            }
-        ];
-
-        let currentTestimonialIndex1 = 0;
-        let currentTestimonialIndex2 = 0;
-        let currentTestimonialIndex3 = 0;
-
-        function updateTestimonials() {
-            const testimonial1 = testimonials_barber_1[currentTestimonialIndex1];
-            $('#1 .feedback-avatar').attr('src', testimonial1.img);
-            $('#1 .feedback-text').text(testimonial1.quote);
-            $('#1 .feedback-author').text(testimonial1.author);
-
-            const testimonial2 = testimonials_barber_2[currentTestimonialIndex2];
-            $('#2 .feedback-avatar').attr('src', testimonial2.img);
-            $('#2 .feedback-text').text(testimonial2.quote);
-            $('#2 .feedback-author').text(testimonial2.author);
-
-            const testimonial3 = testimonials_barber_3[currentTestimonialIndex3];
-            $('#3 .feedback-avatar').attr('src', testimonial3.img);
-            $('#3 .feedback-text').text(testimonial3.quote);
-            $('#3 .feedback-author').text(testimonial3.author);
-
-            currentTestimonialIndex1 = (currentTestimonialIndex1 + 1) % testimonials_barber_1.length;
-            currentTestimonialIndex2 = (currentTestimonialIndex2 + 1) % testimonials_barber_2.length;
-            currentTestimonialIndex3 = (currentTestimonialIndex3 + 1) % testimonials_barber_3.length;
-        }
-
-        $(document).ready(function() {
-            updateTestimonials();
-            setInterval(updateTestimonials, 5000);
-        });
-    </script>
-
-</script>
 <script src="assets/js/animation.js"></script>
+<script src="assets/js/barberChange.js"></script>
 </body>
 </html>
