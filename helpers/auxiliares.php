@@ -234,3 +234,37 @@ function exibe_horarios($selectedDate, $currentDateTime)
         }
     }
 }
+
+function get_cliente_by_email($conexao, $email)
+{
+    $sql = "SELECT id, nome, sobrenome, email FROM cliente WHERE email = ?";
+    
+    $stmt = mysqli_prepare($conexao, $sql);
+    
+    if ($stmt) 
+    {
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $id, $nome, $sobrenome, $email);
+        
+        if (mysqli_stmt_fetch($stmt)) {
+            // Fecha o statement
+            mysqli_stmt_close($stmt);
+            // Retorna os dados do cliente
+            return [
+                'id' => $id,
+                'nome' => $nome,
+                'sobrenome' => $sobrenome,
+                'email' => $email
+            ];
+        } else {
+            // Cliente não encontrado, retorna array vazio
+            mysqli_stmt_close($stmt);
+            return [];
+        }
+    } 
+    else 
+    {
+        return [];
+    }
+}
