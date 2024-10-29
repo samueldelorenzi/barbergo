@@ -14,40 +14,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - BarberGO</title>
+  <title>BarberGO - Cadastro</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="shortcut icon" href="anexos/icone.png" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/Login/style.css">
+  <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
 </head>
 <body class="background-image">
     <div class="container d-flex align-items-center justify-content-center vh-100">
         <div class="bg-white rounded col-8 col-lg-4 shadow-lg p-4">
             <div class="text-center">
                 <img src="../assets/img/icone.png" alt="Ícone Barbearia" class="img shadow">
-                <h1 class="fs-4">Crie sua conta e comece a usar o BarberGO</h1>
+                <h1 class="fs-4">Crie sua conta e comece agora a marcar horários pelo BarberGO</h1>
             </div>
             <form method="POST" action="controllers/cadastro.php" class="needs-validation pb-3" novalidate>
                 <div class="input-group mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="Nome" required>
                     <label class="input-group-text"><i class="fa-solid fa-user"></i></label>
-                    <div class="invalid-feedback">Preencha o teu nome.</div>
-                    <div class="valid-feedback">Nome válido!</div>
+                    <div class="invalid-feedback">Campo obrigatório.</div>
+                    <div class="valid-feedback">Preenchido.</div>
                 </div>
 
                 <div class="input-group mb-3">
                     <input type="email" name="email" class="form-control" placeholder="E-mail" required>
                     <label class="input-group-text"><i class="fa-solid fa-envelope"></i></label>
-                    <div class="invalid-feedback">Preencha o teu e-mail.</div>
-                    <div class="valid-feedback">E-mail válido!</div>
+                    <div class="invalid-feedback">Campo obrigatório.</div>
+                    <div class="valid-feedback">Preenchido.</div>
                 </div>
 
                 <div class="input-group mb-3">
                     <input type="password" name="senha" class="form-control" placeholder="Senha" required maxlength="16">
                     <label class="input-group-text"><i class="fa-solid fa-lock"></i></label>
-                    <div class="invalid-feedback">Preencha a tua senha.</div>
-                    <div class="valid-feedback">Senha válida!</div>
+                    <div class="invalid-feedback">Campo obrigatório.</div>
+                    <div class="valid-feedback">Preenchido.</div>
                 </div>
 
                 <?php
@@ -68,7 +68,7 @@
             </form>
             <hr class="w-75 m-auto py-3">
             <div class="text-center">
-                    <a href="./form_login.php" class="nav-link text-decoration-none">Já possui cadastro? Faça login</a>
+                    <a href="form_login.php" class="nav-link text-decoration-none">Já possui cadastro? Faça login</a>
                 </div>
         </div>
     </div>
