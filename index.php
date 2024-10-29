@@ -26,7 +26,7 @@
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg" href="#">Cadastro</a></li>
             </ul>
             <div class="btn-header">
-                <a href="views/form_login" class="btn btn-warning active login w-100">Login</a>
+                <a href="views/form_login.php" class="btn btn-warning active login w-100">Login</a>
             </div>
         </div>
     </div>
