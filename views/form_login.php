@@ -63,7 +63,7 @@
             <hr class="w-75 m-auto">
             <div class="my-2 text-center">
                 <p>Ao fazer login você concorda com os termos de uso</p>
-                <a href="../index.php" class="nav-link text-decoration-none">Não possui login? Registrar-se</a>
+                <a href="cadastro.php" class="nav-link text-decoration-none">Não possui login? Registrar-se</a>
             </div>
         </div>
     </div>
