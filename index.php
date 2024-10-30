@@ -23,7 +23,7 @@
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg " href="#home">Home</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#services">Serviços</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#barbers">Barbeiros</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg" href="#">Cadastro</a></li>
+                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg" href="views/cadastro.php">Cadastro</a></li>
             </ul>
             <div class="btn-header">
                 <a href="views/form_login.php" class="btn btn-warning active login w-100">Login</a>
@@ -157,7 +157,7 @@
         <hr class="w-75 mx-auto d-md-none">
         <div class="col-md-3 mb-3 text-center text-md-left">
             <h3 class="fs-5">Equipe</h3>
-            <a href="#" class="nav-link">Sobre Nós</a>
+            <a href="views/sobre.php" class="nav-link">Sobre Nós</a>
         </div>
         <hr class="w-75 mx-auto d-md-none">
         <div class="col-md-3 mb-3 text-center text-md-left">
