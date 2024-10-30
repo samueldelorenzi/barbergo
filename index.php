@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="assets/css/Homepage/style.css">
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark d-flex justify-content-center align-content-center p-3">
-    <div class="container">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark  d-flex justify-content-center align-items-center p-4 sticky-top top-0">
+    <div class="container ">
         <img src="assets/img/icone.png" class="img" alt="Logo BarberGO">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class=" navbar-toggler-icon"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto mx-md-auto pt-5">
+            <ul class="navbar-nav ms-auto mx-md-auto ">
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg " href="#home">Home</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#services">Serviços</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#barbers">Barbeiros</a></li>
@@ -147,7 +147,7 @@
 </section>
 
 
-<footer class="container-fluid text-light bg-dark">
+<footer class="container-fluid text-light bg-dark ">
     <div class="row py-3">
         <div class="col-md-3 mb-3 text-center text-md-left">
             <h3 class="fs-5">Termo de Responsabilidade</h3>
@@ -168,11 +168,12 @@
         <hr class="w-75 mx-auto d-md-none">
         <div class="col-md-3 mb-3 text-center text-md-left">
             <h3 class="fs-5">Siga-nos nas Redes Sociais</h3>
-            <div class="btn-group">
-                <a href="https://instagram.com" target="_blank" class="btn btn-warning fs-4"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" class="btn btn-warning fs-4"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://linkedin.com" target="_blank" class="btn btn-warning fs-4"><i class="fa-brands fa-linkedin"></i></a>
+            <div class="btn-group border ">
+                <a href="https://instagram.com" target="_blank" class="btn btn-warning fs-3 p-2 border"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-linkedin"></i></a>
             </div>
+
             <p>&copy; BarberGO 2024</p>
         </div>
     </div>
