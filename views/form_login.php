@@ -58,6 +58,12 @@
                     <input type="checkbox" name="remember" id="remember" class="form-check-input">
                     <label for="remember" class="form-check-label">Lembrar de mim</label>
                 </div>
+                <?php
+                    if (isset($_SESSION['error_message'])) {
+                        echo '<div style="text-align: center;"><p style="color: #b82222;">' . $_SESSION['error_message'] . '</p></div>';
+                        unset($_SESSION['error_message']);
+                    }
+                ?>
                 <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
             </form>
             <hr class="w-75 m-auto">
@@ -67,18 +73,6 @@
             </div>
         </div>
     </div>
-
-    <!-- PHP para exibir mensagens -->
-    <?php
-        if (isset($_SESSION['success_message'])) {
-            echo '<p style="color: green;">' . $_SESSION['success_message'] . '</p>';
-            unset($_SESSION['success_message']);
-        } elseif (isset($_SESSION['error_message'])) {
-            echo '<p style="color: red;">' . $_SESSION['error_message'] . '</p>';
-            unset($_SESSION['error_message']);
-        }
-    ?>
-
 
   <!-- Bootstrap JS and dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
