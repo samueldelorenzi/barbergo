@@ -28,7 +28,7 @@
                 <img src="../assets/img/icone.png" alt="Ícone Barbearia" class="img shadow">
                 <h1 class="fs-4">Crie sua conta e comece agora a marcar horários pelo BarberGO</h1>
             </div>
-            <form method="POST" action="controllers/cadastro.php" class="needs-validation pb-3" novalidate>
+            <form method="POST" action="../controllers/cadastro.php" class="needs-validation pb-3" novalidate>
                 <div class="input-group mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="Nome" required>
                     <label class="input-group-text"><i class="fa-solid fa-user"></i></label>
