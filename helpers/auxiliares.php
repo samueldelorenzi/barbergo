@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 function adicionar_cliente($conexao, $cadastro)
 {
-    $sqlGravar = "INSERT INTO cliente (nome, sobrenome, email, senha) VALUES (?, ?, ?, ?)";
+    $sqlGravar = "INSERT INTO cliente (nome, email, senha) VALUES (?, ?, ?, ?)";
     
     $stmt = mysqli_prepare($conexao, $sqlGravar);
     
@@ -15,7 +15,7 @@ function adicionar_cliente($conexao, $cadastro)
     {
         $hashed_password = password_hash($cadastro['senha'], PASSWORD_DEFAULT);
         
-        mysqli_stmt_bind_param($stmt, "ssss", $cadastro['nome'], $cadastro['sobrenome'], $cadastro['email'], $hashed_password);
+        mysqli_stmt_bind_param($stmt, "ssss", $cadastro['nome'], $cadastro['email'], $hashed_password);
         
         $result = mysqli_stmt_execute($stmt);
         
@@ -30,7 +30,7 @@ function adicionar_cliente($conexao, $cadastro)
 }
 function verificar_login($conexao, $login)
 {
-    $sqlVerificar = "SELECT id, nome, sobrenome, email, senha FROM cliente WHERE email = ?";
+    $sqlVerificar = "SELECT id, nome, email, senha FROM cliente WHERE email = ?";
     
     $stmt = mysqli_prepare($conexao, $sqlVerificar);
     
@@ -43,7 +43,7 @@ function verificar_login($conexao, $login)
         mysqli_stmt_store_result($stmt);
         
         if (mysqli_stmt_num_rows($stmt) > 0) {
-            mysqli_stmt_bind_result($stmt, $id, $nome, $sobrenome, $email, $senha);
+            mysqli_stmt_bind_result($stmt, $id, $nome, $email, $senha);
             
             mysqli_stmt_fetch($stmt);
             
@@ -57,7 +57,6 @@ function verificar_login($conexao, $login)
                     'user' => [
                         'id' => $id,
                         'nome' => $nome,
-                        'sobrenome' => $sobrenome,
                         'email' => $email
                     ]
                 ];
@@ -237,7 +236,7 @@ function exibe_horarios($selectedDate, $currentDateTime)
 
 function get_cliente_by_email($conexao, $email)
 {
-    $sql = "SELECT id, nome, sobrenome, email FROM cliente WHERE email = ?";
+    $sql = "SELECT id, nome, email FROM cliente WHERE email = ?";
     
     $stmt = mysqli_prepare($conexao, $sql);
     
@@ -245,7 +244,7 @@ function get_cliente_by_email($conexao, $email)
     {
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $id, $nome, $sobrenome, $email);
+        mysqli_stmt_bind_result($stmt, $id, $nome, $email);
         
         if (mysqli_stmt_fetch($stmt)) {
             // Fecha o statement
@@ -254,7 +253,6 @@ function get_cliente_by_email($conexao, $email)
             return [
                 'id' => $id,
                 'nome' => $nome,
-                'sobrenome' => $sobrenome,
                 'email' => $email
             ];
         } else {

@@ -5,7 +5,6 @@ use barbergo;
 create table cliente (
 	id int not null auto_increment primary key,
     nome varchar(256),
-    sobrenome varchar(256),
     email varchar(256),
     senha varchar(256)
 );

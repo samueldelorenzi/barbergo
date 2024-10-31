@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nome']) && !empty($_P
     }
     $cadastro = [
         'nome' => mysqli_real_escape_string($conexao, trim($_POST['nome'])),
-        'sobrenome' => mysqli_real_escape_string($conexao, trim($_POST['sobrenome'])),
         'email' => mysqli_real_escape_string($conexao, trim($_POST['email'])),
         'senha' => mysqli_real_escape_string($conexao, trim($_POST['senha']))
     ];
