@@ -23,13 +23,7 @@ p {
     margin-bottom: 5px;
 }
 
-.img {
-    height: 60px;
-    color: chocolate;
-    background: #613a29;
-    border-radius: 50%;
-    box-shadow: 2px 1px 3px black;
-}
+
 
 .testimonial {
     background-color: white;
@@ -58,7 +52,7 @@ p {
 }
 
 body {
-    background-color: #e0e0e0;
+    background-color: #e0e0e0c1;
 }
 
 
@@ -148,43 +142,21 @@ body {
 }
 
 
-@media (min-width: 768px) {
-    .remove-outline-lg {
-        border: none !important;
-    }
 
-    .login {
-        animation: pulse 1s infinite;
-    }
-
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.2);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-}
 h2{
-    background-image: linear-gradient(to right ,var(--cor1), transparent);
+    background-image: linear-gradient(to right ,rgba(76, 52, 19, 0.877), transparent);
 }
 .btn-warning, .btn-header>.btn {
-    background-color: chocolate;
+    background-color:var(--cor1);
     border: none;
     font-weight: 600;
 } 
 .btn-warning:hover{
-    background-color:chocolate;; ;
+    background-color:rgba(76, 52, 19, 0.877) ;
 }
 .btn-outline-warning{
-    color: chocolate;
-    border-top: 2px solid chocolate;
+    color: white;
+    border-top: 2px solid var(--cor1);
    
 }
 .btn-outline-warning:hover{

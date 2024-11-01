@@ -18,15 +18,37 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../assets/css/Geral/style.css">
   <link rel="stylesheet" href="../assets/css/Login/style.css">
+  
   <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
 </head>
-<body class="background-image">
-    <div class="container d-flex align-items-center justify-content-center vh-100">
-        <div class="bg-white rounded col-8 col-lg-4 shadow-lg p-4">
+<body class="">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark  d-flex justify-content-center align-items-center p-4 sticky-top top-0">
+    <div class="container ">
+        <img src="../assets/img/icone.png" class="img" alt="Logo BarberGO">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class=" navbar-toggler-icon"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mx-md-auto ">
+                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg " href="../index.php">Home</a></li>
+                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#services">Serviços</a></li>
+                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#barbers">Barbeiros</a></li>
+                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg" href="views/cadastro.php">Cadastro</a></li>
+            </ul>
+            <div class="btn-header">
+                <a href="views/form_login.php" class="btn btn-warning active login w-100">Login</a>
+            </div>
+        </div>
+    </div>
+</nav>
+    <div class="container d-flex align-items-center justify-content-center vh-100 ">
+        <div class="bg-white rounded col-10 col-lg-4 shadow-lg p-4">
             <div class="">
-                <img src="../assets/img/icone.png" alt="Ícone Barbearia" class="img shadow">
-                <h1 class="fs-4 text-center py-3">Faça login para agendar seu horário</h1>
+               
+                <h1 class="fs-5 my-4 text-center">Faça login para agendar seu horário</h1>
             </div>
             <form action="../controllers/login.php" method="post" class="needs-validation pb-3" autocomplete="on" novalidate>
                 <div class="input-group mb-4">
@@ -73,7 +95,37 @@
             </div>
         </div>
     </div>
+    <footer class="container-fluid text-light bg-dark ">
+    <div class="row py-3">
+        <div class="col-md-3 mb-3 text-center text-md-left">
+            <h3 class="fs-5">Termo de Responsabilidade</h3>
+            <a href="#" class="nav-link">Privacidade</a><br>
+            <a href="#" class="nav-link">Termos de Uso</a>
+        </div>
+        <hr class="w-75 mx-auto d-md-none">
+        <div class="col-md-3 mb-3 text-center text-md-left">
+            <h3 class="fs-5">Equipe</h3>
+            <a href="./sobre.php" class="nav-link">Sobre Nós</a>
+        </div>
+        <hr class="w-75 mx-auto d-md-none">
+        <div class="col-md-3 mb-3 text-center text-md-left">
+            <h3 class="fs-5">Feedback e Suporte</h3>
+            <a href="#" class="nav-link">Feedback e Avaliações</a><br>
+            <a href="#" class="nav-link">Suporte e Contato</a>
+        </div>
+        <hr class="w-75 mx-auto d-md-none">
+        <div class="col-md-3 mb-3 text-center text-md-left">
+            <h3 class="fs-5">Siga-nos nas Redes Sociais</h3>
+            <div class="btn-group border ">
+                <a href="https://instagram.com" target="_blank" class="btn btn-warning fs-3 p-2 border"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
 
+            <p>&copy; BarberGO 2024</p>
+        </div>
+    </div>
+</footer>
   <!-- Bootstrap JS and dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/valid.js"></script>
