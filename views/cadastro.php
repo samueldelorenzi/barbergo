@@ -40,6 +40,7 @@
             <div class="btn-header">
                 <a href="views/form_login.php" class="btn btn-warning active login w-100">Login</a>
             </div>
+<<<<<<< HEAD
         </div>
     </div>
 </nav>
@@ -51,6 +52,9 @@
                 <h1 class=" fs-5 my-4 text-center">Crie sua conta e comece agora a marcar horários pelo BarberGO</h1>
             
             <form method="POST" action="controllers/cadastro.php" class="needs-validation pb-3" novalidate>
+=======
+            <form method="POST" action="../controllers/cadastro.php" class="needs-validation pb-3" novalidate>
+>>>>>>> main
                 <div class="input-group mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="Nome" required>
                     <label class="input-group-text"><i class="fa-solid fa-user"></i></label>
