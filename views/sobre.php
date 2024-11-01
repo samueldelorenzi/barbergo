@@ -83,7 +83,7 @@
                     <td><strong>Paulo Mário Valente Bumba</strong></td>
                     <td>Desenvolvedor Frontend</td>
                     <td>Responsável pela criação de interfaces de usuário interativas e responsivas.</td>
-                    <td><img src="../assets/img/Equipa/paulo.jpg" alt="Foto de Paulo Bumba" style="width: 150px; height: 100%;"></td>
+                    <td><img src="../assets/img/Equipa/paulo.jpg"class="img-fluid" alt="Foto de Paulo Bumba" style="width: 150px; height: 100%;"></td>
                 </tr>
                 <!-- Adicione outras linhas da equipe conforme necessário -->
             </tbody>

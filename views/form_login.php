@@ -23,28 +23,26 @@
   
   <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
 </head>
-<body class="">
+<body class="d-flex flex-column min-vh-100">
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark  d-flex justify-content-center align-items-center p-4 sticky-top top-0">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark  flex-grow-3 d-flex justify-content-center align-items-center p-4 sticky-top top-0">
     <div class="container ">
         <img src="../assets/img/icone.png" class="img" alt="Logo BarberGO">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class=" navbar-toggler-icon"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto mx-md-auto ">
+            <ul class="navbar-nav ms-auto mx-md-end ">
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg " href="../index.php">Home</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#services">Serviços</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#barbers">Barbeiros</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg" href="views/cadastro.php">Cadastro</a></li>
             </ul>
-            <div class="btn-header">
-                <a href="views/form_login.php" class="btn btn-warning active login w-100">Login</a>
-            </div>
+            
         </div>
     </div>
 </nav>
-    <div class="container d-flex align-items-center justify-content-center vh-100 ">
+    <div class="container   d-flex align-items-center justify-content-center my-5">
         <div class="bg-white rounded col-10 col-lg-4 shadow-lg p-4">
             <div class="">
                
@@ -117,9 +115,9 @@
         <div class="col-md-3 mb-3 text-center text-md-left">
             <h3 class="fs-5">Siga-nos nas Redes Sociais</h3>
             <div class="btn-group border ">
-                <a href="https://instagram.com" target="_blank" class="btn btn-warning fs-3 p-2 border"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://linkedin.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://instagram.com" target="_blank" class="  fs-3 p-2 border"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="btn  fs-4 p-2 border"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="btn  fs-4 p-2 border"><i class="fa-brands fa-linkedin"></i></a>
             </div>
 
             <p>&copy; BarberGO 2024</p>

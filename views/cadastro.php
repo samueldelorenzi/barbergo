@@ -35,43 +35,43 @@
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg " href="../index.php">Home</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#services">Serviços</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#barbers">Barbeiros</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg" href="views/cadastro.php">Cadastro</a></li>
+                
             </ul>
             <div class="btn-header">
                 <a href="views/form_login.php" class="btn btn-warning active login w-100">Login</a>
             </div>
-<<<<<<< HEAD
+
         </div>
     </div>
 </nav>
 
- <div class="container d-flex align-items-center justify-content-center vh-100">
+ <div class="container d-flex align-items-center justify-content-center my-5">
         <div class="bg-white border rounded col-10 col-lg-4 shadow-lg p-4">
            
                 
                 <h1 class=" fs-5 my-4 text-center">Crie sua conta e comece agora a marcar horários pelo BarberGO</h1>
             
             <form method="POST" action="controllers/cadastro.php" class="needs-validation pb-3" novalidate>
-=======
+
             <form method="POST" action="../controllers/cadastro.php" class="needs-validation pb-3" novalidate>
->>>>>>> main
+
                 <div class="input-group mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="Nome" required>
-                    <label class="input-group-text"><i class="fa-solid fa-user"></i></label>
+                    <label class="input-group-text"><i class="fa-solid fa-user fs-4 "></i></label>
                     <div class="invalid-feedback">Campo obrigatório.</div>
                     <div class="valid-feedback">Preenchido.</div>
                 </div>
 
                 <div class="input-group mb-3">
                     <input type="email" name="email" class="form-control" placeholder="E-mail" required>
-                    <label class="input-group-text"><i class="fa-solid fa-envelope"></i></label>
+                    <label class="input-group-text"><i class="fa-solid fa-envelope fs-4"></i></label>
                     <div class="invalid-feedback">Campo obrigatório.</div>
                     <div class="valid-feedback">Preenchido.</div>
                 </div>
 
                 <div class="input-group mb-3">
                     <input type="password" name="senha" class="form-control" placeholder="Senha" required maxlength="16">
-                    <label class="input-group-text"><i class="fa-solid fa-lock"></i></label>
+                    <label class="input-group-text"><i class="fa-solid fa-lock fs-4"></i></label>
                     <div class="invalid-feedback">Campo obrigatório.</div>
                     <div class="valid-feedback">Preenchido.</div>
                 </div>

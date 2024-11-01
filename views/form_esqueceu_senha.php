@@ -19,14 +19,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../assets/css/Login/style.css">
-<<<<<<< HEAD
+
   <link rel="stylesheet" href="../assets/css/Geral/style.css">
-=======
->>>>>>> main
+
+
   <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
 </head>
 
-<body class="background-image">
+<body class="">
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark  d-flex justify-content-center align-items-center p-4 sticky-top top-0">
     <div class="container ">
@@ -47,7 +47,7 @@
         </div>
     </div>
 </nav> 
-    <div class="container d-flex align-items-center justify-content-center vh-100 ">
+    <div class="container d-flex align-items-center justify-content-center my-5 ">
         <div class="bg-white rounded col-10 col-lg-4 shadow-lg p-4 ">
             <div class="">
 

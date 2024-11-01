@@ -67,9 +67,7 @@ body {
     border: none;
     font-weight: 600;
 } 
-.btn-warning:hover{
-    background-color:rgba(76, 52, 19, 0.877) ;
-}
+
 .btn-outline-warning{
     color: white;
     border-top: 2px solid var(--cor1);

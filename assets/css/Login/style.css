@@ -30,11 +30,11 @@
 }
 
 i {
-    color: chocolate;
+    color: rgba(76, 52, 19, 0.877);
 }
 
 .nav-link {
-    color: chocolate;
+    color: #613a29;
     font-weight: 600;
 }
 
@@ -42,7 +42,4 @@ i {
     background-color: #613a29;
     padding: 5px;
     border: none;
-}
-.bg-dark{
-    background-color: black;
 }
