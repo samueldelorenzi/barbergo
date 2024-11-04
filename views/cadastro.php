@@ -33,12 +33,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto mx-md-auto ">
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg " href="../index.php">Home</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#services">Serviços</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#barbers">Barbeiros</a></li>
+                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="../index.php#services">Serviços</a></li>
+                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="../index.php#barbers">Barbeiros</a></li>
                 
             </ul>
             <div class="btn-header">
-                <a href="views/form_login.php" class="btn btn-warning active login w-100">Login</a>
+                <a href="form_login.php" class="btn btn-warning active login w-100">Login</a>
             </div>
 
         </div>
