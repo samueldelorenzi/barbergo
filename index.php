@@ -69,7 +69,7 @@
 </section>
 <h2 class="text-center my-md-4">Nossos Serviços</h2>
 <h3 class="text-center ">Escolha as seus <span  class="text-warning">Gostos</span> especiais na BarberGO</h3>
-<section id="services " class="my-5 services">
+<section id="services" class="my-5 services">
     <div class="container text-center">
        
         <div class="row">
