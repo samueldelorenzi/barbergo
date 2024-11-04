@@ -51,7 +51,7 @@
                 
                 <h1 class=" fs-5 my-4 text-center">Crie sua conta e comece agora a marcar horários pelo BarberGO</h1>
             
-            <form method="POST" action="controllers/cadastro.php" class="needs-validation pb-3" novalidate>
+            <form method="POST" action="../controllers/cadastro.php" class="needs-validation pb-3" novalidate>
 
             <form method="POST" action="../controllers/cadastro.php" class="needs-validation pb-3" novalidate>
 
