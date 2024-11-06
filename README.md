@@ -1,4 +1,4 @@
-# BarberGO
+# 💈 BarberGO
 
 ### Estatísticas
 ![GitHub repo size](https://img.shields.io/github/repo-size/samueldelorenzi/barbergo?style=for-the-badge)
