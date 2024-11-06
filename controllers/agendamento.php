@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // Inclui arquivos
 include 'banco.php';
-include '../helpers/Agendamento.php';
+include '../models/Agendamentos.php';
 
 
 // Configurações de exibição de erros
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['data']) && !empty($_P
         }
         // Caso o horário não esteja disponível, retorna erro
     } else {
-        $_SESSION['error_message'] = "Horário indisponível";
+        $_SESSION['error_message'] = "Horário indisponível. Tente outro.";
     }
 
     // Redireciona para a página de agendamento
