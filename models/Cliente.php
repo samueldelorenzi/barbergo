@@ -28,6 +28,7 @@ class Cliente {
         if ($resultado->num_rows > 0) {
             $clienteData = $resultado->fetch_assoc();
             if (password_verify($senha, $clienteData['senha'])) {
+                $_SESSION['id_cliente'] = $clienteData['id'];
                 return new Cliente($clienteData['nome'], $clienteData['email'], $clienteData['senha'], $clienteData['id']);
             }
         }

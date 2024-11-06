@@ -1,29 +1,41 @@
 <?php
+
+// Exibe erros
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+// Inicia sessão
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
 function get_servico_by_id($conexao, $id_servico)
 {
+    // Define a consulta SQL
     $sql = "SELECT nome, descricao, preco FROM servico WHERE id = ?";
     
+    // Prepara a declaração SQL
     $stmt = mysqli_prepare($conexao, $sql);
     
     if ($stmt) 
     {
+        // Vincula o parâmetro id
         mysqli_stmt_bind_param($stmt, "s", $id_servico);
         
+        // Executa a declaração SQL
         mysqli_stmt_execute($stmt);
         
+        // Vincula as variáveis de resultado
         mysqli_stmt_bind_result($stmt, $nome, $descricao, $preco);
         
+        // Busca o resultado
         mysqli_stmt_fetch($stmt);
         
+        // Fecha a declaração
         mysqli_stmt_close($stmt);
         
+        // Retorna os detalhes do serviço como um array
         return [
             'nome' => $nome,
             'descricao' => $descricao,
@@ -32,6 +44,7 @@ function get_servico_by_id($conexao, $id_servico)
     } 
     else 
     {
+        // Retorna uma string vazia se a preparação da declaração falhar
         return "";
     }
 }
@@ -94,70 +107,9 @@ function get_agendamentos($conexao, $id_cliente)
 
 function converte_data_usuario($data)
 {
+    // Separa a data em partes por hífen
     $data = explode("-", $data);
+
+    // Retorna a data no formato dd/mm/aaaa
     return $data[2] . "/" . $data[1] . "/" . $data[0];
-}
-
-function verificar_horario($conexao, $agendamento) 
-{
-    $sqlVerificar = "SELECT COUNT(*) FROM agendamento WHERE dia = ? AND hora = ?";
-
-    $stmt = mysqli_prepare($conexao, $sqlVerificar);
-
-    if ($stmt) 
-    {
-        mysqli_stmt_bind_param($stmt, "ss", $agendamento['dia'], $agendamento['hora']);
-        
-        mysqli_stmt_execute($stmt);
-        
-        mysqli_stmt_bind_result($stmt, $count);
-        
-        mysqli_stmt_fetch($stmt);
-        
-        mysqli_stmt_close($stmt);
-        
-        if ($count == 0) {
-            return adicionar_agendamento($conexao, $agendamento, $_SESSION['id_cliente']);
-        } else {
-            return false;
-        }
-    } 
-    else 
-    {
-        return false;
-    }
-}
-
-function exibe_horarios($selectedDate, $currentDateTime)
-{
-    $startHour = 8;
-    $endHour = 18;
-    $today = new DateTime();
-    $isToday = $selectedDate->format('Y-m-d') == $today->format('Y-m-d');
-    
-    for ($hour = $startHour; $hour < $endHour; $hour++) 
-    {
-        for ($minute = 0; $minute < 60; $minute += 30) 
-        {
-            $slotTime = clone $today;
-            $slotTime->setTime($hour, $minute);
-            $slotTime->setDate($selectedDate->format('Y'), $selectedDate->format('m'), $selectedDate->format('d'));
-            
-            if ($isToday) 
-            {
-                if ($slotTime > $currentDateTime) 
-                {
-                    echo '<div class="schedule-slot">';
-                    echo $slotTime->format('H:i');
-                    echo '</div>';
-                }
-            } 
-            else 
-            {
-                echo '<div class="schedule-slot">';
-                echo $slotTime->format('H:i');
-                echo '</div>';
-            }
-        }
-    }
 }
