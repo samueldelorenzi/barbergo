@@ -35,7 +35,7 @@
             <ul class="navbar-nav ms-auto mx-md-end ">
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg " href="../index.php">Home</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#services">Serviços</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#barbers">Barbeiros</a></li>
+                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#barbers">Clientes</a></li>
                 <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg" href="cadastro.php">Cadastro</a></li>
             </ul>
             
