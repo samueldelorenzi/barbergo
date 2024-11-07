@@ -94,7 +94,7 @@ body {
 }
 
 .carousel-item img {
-    height: 400px;
+    height: 300px;
     object-fit: cover;
 }
 
