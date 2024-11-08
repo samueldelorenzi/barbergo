@@ -2,19 +2,9 @@
 const animacao = new ScrollReveal();
 animacao.reveal('.card', {
     origin: 'right',
-    distance: '30%',
-    duration:2000,
-    
-    
-    reset :true
-});
-
-animacao.reveal('.services', {
-    origin: 'top',
-    distance: '30%',
-    duration:2000,
-    delay:250,
-    
+    distance: '10%',
+    duration:400,
+    delay:100,
     reset :true
 });
 $(document).ready(function() {
