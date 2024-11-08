@@ -78,8 +78,8 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="assets/img/client-doing-hair-cut-barber-shop-salon.jpg" class="card-img-top" alt="Corte de Cabelo">
+                    <div class="card mb-4  h100 ">
+                        <img src="assets/img/client-doing-hair-cut-barber-shop-salon.jpg" class="card-img-top img-thumbnail" alt="Corte de Cabelo">
                         <div class="card-body">
                             <h5 class="card-title">Corte de cabelo</h5>
                             <p class="card-text">A melhor maneira de agendar a régua para o final de semana.</p>
@@ -88,8 +88,8 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="assets/img/handsome-man-shaving-beard-barbershop copy.jpg" class="card-img-top" alt="Barba">
+                    <div class="card mb-4 h100">
+                        <img src="assets/img/handsome-man-shaving-beard-barbershop copy.jpg" class="card-img-top img-thumbnail" alt="Barba">
                         <div class="card-body">
                             <h5 class="card-title">Barba</h5>
                             <p class="card-text">Serviços de barbearia da melhor qualidade!</p>
@@ -98,8 +98,8 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="assets/img/image2.png" class="card-img-top" alt="Coloração">
+                    <div class="card mb-4  h100 ">
+                        <img src="assets/img/image2.png" class="card-img-top img-thumbnail" alt="Coloração">
                         <div class="card-body">
                             <h5 class="card-title">Coloração</h5>
                             <p class="card-text">O top 1 quando o assunto é agendamento de mudança visual.</p>
@@ -147,7 +147,7 @@
         </div>
     </section>
 
-    <footer class="container-fluid text-light bg-dark">
+    <footer class="container-fluid text-light bg-dark ">
         <div class="row py-3">
             <div class="col-md-3 mb-3 text-center text-md-left">
                 <h3 class="fs-5">Termo de Responsabilidade</h3>

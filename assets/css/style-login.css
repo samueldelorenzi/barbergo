@@ -34,3 +34,10 @@ i {
     padding: 5px;
     border: none;
 }
+.background-img{
+    background-image: url(../../assets/img/image3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
