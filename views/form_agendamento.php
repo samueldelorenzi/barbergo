@@ -3,6 +3,8 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
+    include '../helpers/auxiliares.php';
+
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -51,47 +53,8 @@
         <br>
 
         <div id="div-horarios">
-            <?php
-                $abertura = 8;
-                $fechamento = 18;
-                $hoje = new DateTime();
-                $horarios_mostrados = 0;
-
-                $isToday = $selectedDate->format('Y-m-d') === $hoje->format('Y-m-d');
-
-                // Define a hora atual para comparação (apenas se for o dia atual)
-                $currentDateTime = new DateTime();
-            
-                // Loop para gerar horários
-                for ($hora = $abertura; $hora < $fechamento; $hora++) {
-                    for ($minuto = 0; $minuto < 60; $minuto += 30) {
-                        // Criar um objeto DateTime para o slot
-                        $slotTime = clone $selectedDate;
-                        $slotTime->setTime($hora, $minuto); // Definir o horário do slot
-            
-                        // Mostrar apenas horários futuros se a data for hoje
-                        if ($isToday) {
-                            if ($slotTime > $currentDateTime) { // Mostrar apenas horários futuros
-                                $horarios_mostrados++;
-                                echo '<div class="horario">';
-                                echo $slotTime->format('H:i'); // Exibir no formato 24h
-                                echo '</div>';
-                            }
-                        } else {
-                            $horarios_mostrados++;
-                            echo '<div class="horario">';
-                            echo $slotTime->format('H:i'); // Exibir no formato 24h
-                            echo '</div>';
-                        }
-
-                    }
-                }
-                if($horarios_mostrados == 0)
-                {
-                    echo '</div>';
-                    echo '<br>';
-                    echo '<p>Não há horários disponíveis para o dia selecionado.</p>';
-                }
+            <?php 
+                getHorariosDisp($selectedDate);
             ?>
 
         <?php

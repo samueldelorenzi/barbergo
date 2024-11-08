@@ -18,30 +18,37 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../assets/css/Geral/style.css">
-  <link rel="stylesheet" href="../assets/css/Login/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style-login.css">
   
   <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark  flex-grow-3 d-flex justify-content-center align-items-center p-4 sticky-top top-0">
-    <div class="container ">
-        <img src="../assets/img/icone.png" class="img" alt="Logo BarberGO">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class=" navbar-toggler-icon"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto mx-md-end ">
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg " href="../index.php">Home</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#services">Serviços</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#barbers">Clientes</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg" href="cadastro.php">Cadastro</a></li>
-            </ul>
-            
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark px-4 sticky-top top-0">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <!-- Logo e Nome à esquerda (define uma largura fixa usando flex-grow-1 para ocupar espaço) -->
+            <div class="d-flex align-items-center flex-grow-1 w-50">
+                <img src="../assets/img/icone.png" class="img" alt="Logo BarberGO">
+                <p class="text-white fw-bold my-auto fs-3 ms-2">BarberGO</p>
+            </div>
+
+            <!-- Itens de navegação no centro -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="../index.php">Home</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="../index.php#services">Serviços</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="../index.php#barbers">Clientes</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="cadastro.php">Cadastro</a></li>
+                </ul>
+            </div>
+
+            <!-- Botão de Login à direita, com largura igual à div da esquerda -->
+            <div class="d-flex justify-content-end flex-grow-1 w-50">
+                <a href="form_login.php" class="btn btn-warning login">Login</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
     <div class="container   d-flex align-items-center justify-content-center my-5">
         <div class="bg-white rounded col-10 col-lg-4 shadow-lg p-4">
             <div class="">
@@ -84,7 +91,7 @@
                         unset($_SESSION['error_message']);
                     }
                 ?>
-                <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
+                <button type="submit" class="btn btn-primary w-100 mt-3">Entrar</button>
             </form>
             <hr class="w-75 m-auto">
             <div class="my-2 text-center">

@@ -7,31 +7,37 @@
 
     <!-- Bootstrap CSS --> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/Login/style.css">
-    <link rel="stylesheet" href="../assets/css/Geral/style.css">
+    <link rel="stylesheet" href="../assets/css/style-login.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark  d-flex justify-content-center align-items-center p-4 sticky-top top-0">
-    <div class="container ">
-        <img src="../assets/img/icone.png" class="img" alt="Logo BarberGO">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class=" navbar-toggler-icon"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto mx-md-auto ">
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg " href="../index.php">Home</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#services">Serviços</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6  remove-outline-lg" href="#barbers">Barbeiros</a></li>
-                <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 w-100 fs-6 remove-outline-lg" href="../views/cadastro.php">Cadastro</a></li>
-            </ul>
-            <div class="btn-header">
-                <a href="./form_login.php" class="btn btn-warning active login w-100">Login</a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark px-4 sticky-top top-0">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <!-- Logo e Nome à esquerda (define uma largura fixa usando flex-grow-1 para ocupar espaço) -->
+            <div class="d-flex align-items-center flex-grow-1 w-50">
+                <img src="../assets/img/icone.png" class="img" alt="Logo BarberGO">
+                <p class="text-white fw-bold my-auto fs-3 ms-2">BarberGO</p>
+            </div>
+
+            <!-- Itens de navegação no centro -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="../index.php">Home</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="../index.php#services">Serviços</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="../index.php#barbers">Clientes</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="cadastro.php">Cadastro</a></li>
+                </ul>
+            </div>
+
+            <!-- Botão de Login à direita, com largura igual à div da esquerda -->
+            <div class="d-flex justify-content-end flex-grow-1 w-50">
+                <a href="form_login.php" class="btn btn-warning login">Login</a>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
     <div class="container ">
         <div class="text-center mt-3">
                <h1>BarberGO - A Plataforma para Gestão de Barbearias</h1>

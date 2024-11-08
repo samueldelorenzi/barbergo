@@ -6,6 +6,7 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
+    include '../models/Agendamentos.php';
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +42,7 @@
             include "../helpers/auxiliares.php";
 
             if (isset($_SESSION['id_cliente'])) {
-                $agendamentos = get_agendamentos($conexao, $_SESSION['id_cliente']);
+                $agendamentos = Agendamento::listarPorCliente($conexao, $_SESSION['id_cliente']);
                 
                 if (!empty($agendamentos)) {
                     echo "<table class='agendamentos'>";
