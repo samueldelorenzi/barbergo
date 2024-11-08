@@ -12,13 +12,9 @@
 }
 
 .img {
-   height: 60px;
+    height: 60px;
     text-align: center;
     color: chocolate;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    
-    box-shadow: 2px 1px 3px black;
 }
 .navbar {
     background-color: #343a40;
