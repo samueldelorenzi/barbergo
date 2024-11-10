@@ -15,6 +15,8 @@ create table agendamento (
     id_servico int not null,
     dia date not null,
     hora time not null
+
+    -- redundante o datetime já resolve data e hora 
 );
 
 create table servico (
@@ -22,11 +24,12 @@ create table servico (
     nome varchar(256),
     descricao varchar(256),
     preco decimal(10,2)
+
+    
 );
 
-insert into servico (nome, descricao, preco) values
-('Corte', 'Corte de cabelo', 30.00),
-('Barba', 'Aparar e modelar barba', 35.00),
-('Corte e Barba', 'Corte de cabelo e barba', 60.00);
+
 
 select * from cliente
+
+-- 
