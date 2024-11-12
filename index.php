@@ -169,7 +169,7 @@
             <div class="col-md-3 mb-3 text-center text-md-left">
                 <h3 class="fs-5">Siga-nos nas Redes Sociais</h3>
                 <div class="btn-group border">
-                    <a href="https://instagram.com" target="_blank" class="btn btn-warning fs-3 p-2 border"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://facebook.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://linkedin.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
