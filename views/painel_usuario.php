@@ -47,7 +47,7 @@ switch ($pagina) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Usuário - Barbearia</title>
+    <title>BarberGO - Painel do usuário</title>
 
     <!-- AdminLTE e Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2.0/dist/css/adminlte.min.css">
