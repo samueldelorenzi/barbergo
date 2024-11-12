@@ -39,7 +39,7 @@
                     <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="../index.php">Home</a></li>
                     <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="../index.php#services">Serviços</a></li>
                     <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="../index.php#barbers">Clientes</a></li>
-                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="cadastro.php">Cadastro</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="form_cadastro.php">Cadastro</a></li>
                 </ul>
             </div>
 
@@ -102,7 +102,7 @@
                 <hr class="w-75 m-auto">
                 <div class="my-2 text-center">
                     <p>Ao fazer login você concorda com os termos de uso</p>
-                    <a href="cadastro.php" class="nav-link text-decoration-none">Não possui login? Registrar-se</a>
+                    <a href="form_cadastro.php" class="nav-link text-decoration-none">Não possui login? Registrar-se</a>
                 </div>
             </div>
     </div>

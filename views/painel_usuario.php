@@ -30,13 +30,13 @@ $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 'inicio';
 // Inclusão do conteúdo dinâmico baseado na página
 switch ($pagina) {
     case 'agendamento':
-        $conteudo = 'agendamento.php';
+        $conteudo = 'menu/meus_agendamentos.php';
         break;
     case 'perfil':
-        $conteudo = 'meu_perfil.php';
+        $conteudo = 'menu/meu_perfil.php';
         break;
     default:
-        $conteudo = 'pagina_inicial.php';
+        $conteudo = 'menu/pagina_inicial.php';
         break;
 }
 

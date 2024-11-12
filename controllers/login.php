@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) && !empty($_
         $_SESSION['usuario_nome'] = $cliente->getNome();
         $_SESSION['usuario_email'] = $cliente->getEmail();
         
-        header('Location: ../views/form_agendamento.php');
+        header('Location: ../views/painel_usuario.php');
         exit();
     } else {
         // Se o cliente não existir, exibe uma mensagem de erro

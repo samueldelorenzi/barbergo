@@ -26,7 +26,7 @@
                     <li class="nav-item"><a class="btn btn btn-warning mx-md-1 fs-6" href="#home">Home</a></li>
                     <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="#services">Serviços</a></li>
                     <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="#barbers">Clientes</a></li>
-                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="views/cadastro.php">Cadastro</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="views/form_cadastro.php">Cadastro</a></li>
                 </ul>
             </div>
 
