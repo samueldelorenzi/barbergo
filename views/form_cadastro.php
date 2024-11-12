@@ -53,7 +53,7 @@
         <div class="rounded col-10 col-lg-4 shadow-lg p-4 bg-white glass shadow-darker border  border-opacity-75">
             <h1 class="fs-5 my-4 text-center">Crie sua conta e comece agora a marcar horários pelo BarberGO</h1>
             
-            <form method="POST" action="../controllers/form_cadastro.php" class="needs-validation pb-3" novalidate autocomplete="on">
+            <form method="POST" action="../controllers/cadastro.php" class="needs-validation pb-3" novalidate autocomplete="on">
                 <div class="input-group mb-3">
                 <label class="input-group-text"><i class="fa-solid fa-user fs-4"></i></label>
                     <input type="text" name="nome" class="form-control" placeholder="Nome" required>
