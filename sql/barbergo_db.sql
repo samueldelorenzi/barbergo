@@ -27,7 +27,8 @@ create table agendamento (
     id int not null auto_increment primary key,
     id_cliente int not null,
     id_servico int,
-    data_hora datetime not null,
+    dia date not null,
+    hora time not null,
     foreign key (id_cliente) references cliente(id) on delete cascade,
     foreign key (id_servico) references servico(id) on delete set null
 );
