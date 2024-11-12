@@ -1,11 +1,11 @@
 <?php
 
 class Agendamento {
-    private $conexao;
-    private $id_cliente;
-    private $id_servico;
-    private $dia;
-    private $hora;
+    public $conexao;
+    public $id_cliente;
+    public $id_servico;
+    public $dia;
+    public $hora;
 
     public function __construct($conexao, $id_cliente, $id_servico = null, $dia = null, $hora = null) {
         $this->conexao = $conexao;

@@ -24,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) && !empty($_
 
     if ($cliente) {
         $_SESSION['usuario_logado'] = true;
-        $_SESSION['usuario_id'] = $cliente->getId();
-        $_SESSION['usuario_nome'] = $cliente->getNome();
-        $_SESSION['usuario_email'] = $cliente->getEmail();
+        $_SESSION['usuario_id'] = $cliente->$id();
+        $_SESSION['usuario_nome'] = $cliente->$nome();
+        $_SESSION['usuario_email'] = $cliente->$email();
         
         header('Location: ../views/painel_usuario.php');
         exit();

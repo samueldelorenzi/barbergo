@@ -1,9 +1,9 @@
 <?php
 
 class Cliente {
-    private $id;
-    private $nome;
-    private $email;
+    public $id;
+    public $nome;
+    public $email;
     private $senha;
 
     public function __construct($nome, $email, $senha, $id = null) {
@@ -34,17 +34,5 @@ class Cliente {
         }
         
         return false;
-    }
-
-    public function getId() {
-        return $this->id;
-    }
-
-    public function getNome() {
-        return $this->nome;
-    }
-
-    public function getEmail() {
-        return $this->email;
     }
 }
