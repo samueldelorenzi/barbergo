@@ -1,34 +1,32 @@
--- Exclui o esquema se já existir
-drop database if exists barbergo;
-
--- Cria o esquema
 create database barbergo;
 
--- Usa o esquema criado
 use barbergo;
 
--- Cria a tabela cliente
 create table cliente (
-    id int not null auto_increment primary key,
+	id int not null auto_increment primary key,
     nome varchar(256),
     email varchar(256),
     senha varchar(256)
 );
 
--- Cria a tabela servico
-create table servico (
-    id int not null auto_increment primary key,
-    tipo enum('Cabelo', 'Barba', 'Cabelo e Barba') not null,
-    preco decimal(10,2) not null
+create table agendamento (
+	id int not null auto_increment primary key,
+    id_cliente int not null,
+    id_servico int not null,
+    dia date not null,
+    hora time not null
 );
 
--- Cria a tabela agendamento
-create table agendamento (
+create table servico (
     id int not null auto_increment primary key,
-    id_cliente int not null,
-    id_servico int,
-    dia date not null,
-    hora time not null,
-    foreign key (id_cliente) references cliente(id) on delete cascade,
-    foreign key (id_servico) references servico(id) on delete set null
+    nome varchar(256),
+    descricao varchar(256),
+    preco decimal(10,2)
 );
+
+insert into servico (nome, descricao, preco) values
+('Corte', 'Corte de cabelo', 30.00),
+('Barba', 'Aparar e modelar barba', 35.00),
+('Corte e Barba', 'Corte de cabelo e barba', 60.00);
+
+select * from cliente
