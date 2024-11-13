@@ -39,6 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['data']) && !empty($_P
     }
 
     // Redireciona para a página de agendamento
-    header('Location: ../views/painel_usuario.php');
+    header('Location: ../views/painel_usuario.php?pagina=agendamento');
 }
 exit();
