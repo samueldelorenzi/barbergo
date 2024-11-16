@@ -59,10 +59,7 @@ switch ($pagina) {
             background-color: #e0e0e0c1;
         }
         .main-sidebar {
-            background-color: #343a40;
-        }
-        .brand-link {
-            background-color: #343a40;
+            background-color: #212529;
         }
         .small-box {
             border-radius: 10px;
@@ -71,6 +68,10 @@ switch ($pagina) {
         }
         .small-box:hover {
             transform: scale(1.05);
+        }
+        .nav-sidebar .nav-link.active {
+            background-color: chocolate !important;
+            color: black !important;
         }
     </style>
 </head>
@@ -119,19 +120,19 @@ switch ($pagina) {
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
                         <li class="nav-item">
-                            <a href="?pagina=inicio" class="nav-link active">
+                            <a href="?pagina=inicio" class="nav-link <?php echo $pagina == 'inicio' ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>Página Inicial</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="?pagina=agendamento" class="nav-link">
+                            <a href="?pagina=agendamento" class="nav-link <?php echo $pagina == 'agendamento' ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>Meus Agendamentos</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="?pagina=perfil" class="nav-link">
+                            <a href="?pagina=perfil" class="nav-link <?php echo $pagina == 'perfil' ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>Meu Perfil</p>
                             </a>
