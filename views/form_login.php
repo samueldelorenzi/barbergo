@@ -49,7 +49,7 @@
             </div>
         </div>
     </nav>
-    <div class="background-img">
+    <div class="">
     <div class=" container  d-flex align-items-center justify-content-center my-5 bg-opacity-75 ">
             <div class=" rounded col-10 col-lg-4 shadow-lg p-4 bg-white glass shadow-darker border  border-opacity-75">
                 <div class="">
