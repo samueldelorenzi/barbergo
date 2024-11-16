@@ -19,15 +19,15 @@ $agendamentos = Agendamento::listarPorCliente($conexao, $id_cliente);
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
 </head>
 <body>
 <div class="container-fluid">
     <h3 class="mb-3">Meus Agendamentos</h3>
-
-    <!-- Botão para adicionar novo agendamento -->
-    <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalAdicionar">
-        <i class="fas fa-plus"></i> Novo Agendamento
-    </button>
     
     <!-- Tabela de Agendamentos -->
     <table id="tabela-agendamentos" class="table table-bordered table-striped">
@@ -48,10 +48,10 @@ $agendamentos = Agendamento::listarPorCliente($conexao, $id_cliente);
                         $servico = get_servico_by_id($conexao, $agendamento['id_servico']);
                     ?>
                     <tr>
-                        <td><?php echo $servico['nome']; ?></td>
-                        <td><?php echo $agendamento['dia']; ?></td>
-                        <td><?php echo $agendamento['hora']; ?></td>
-                        <td><?php echo $servico['preco']; ?></td>
+                        <td><?php echo "{$servico['nome']}"; ?></td>
+                        <td><?php echo "{$agendamento['dia']}"; ?></td>
+                        <td><?php echo "{$agendamento['hora']}"; ?></td>
+                        <td><?php echo "R\${$servico['preco']}"; ?></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else : ?>
@@ -61,54 +61,6 @@ $agendamentos = Agendamento::listarPorCliente($conexao, $id_cliente);
             <?php endif; ?>
         </tbody>
     </table>
-</div>
-
-<!-- Modal de Adição -->
-<div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="modalAdicionarLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalAdicionarLabel">Novo Agendamento</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form method="POST" action="../controllers/agendamento.php">
-                <input type="hidden" name="action" value="add">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="horario-novo">Dia</label>
-                        <input type="date" class="form-control" id="data-nova" name="data" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="horario-novo">Hora</label>
-                        <input type="time" class="form-control" id="hora-nova" name="hora" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="tipo-novo">Serviço</label>
-                        <select class="form-control" id="tipo-novo" name="servico" required>
-                            <option value="1">Corte</option>
-                            <option value="2">Barba</option>
-                            <option value="3">Corte e Barba</option>
-                        </select>
-                    </div>
-                </div>
-                <?php
-                    if (isset($_SESSION['success_message'])) {
-                        echo '<p class="text-success text-center">' . $_SESSION['success_message'] . '</p>';
-                        unset($_SESSION['success_message']);
-                    } elseif (isset($_SESSION['error_message'])) {
-                        echo '<p class="text-danger text-center">' . $_SESSION['error_message'] . '</p>';
-                        unset($_SESSION['success_message']);
-                    }
-                ?>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary">Salvar Agendamento</button>
-                </div>
-            </form>
-        </div>
-    </div>
 </div>
 
 <!-- Modal de Edição -->
