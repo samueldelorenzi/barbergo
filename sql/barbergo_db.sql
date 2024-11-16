@@ -1,3 +1,5 @@
+drop database if exists barbergo;
+
 create database barbergo;
 
 use barbergo;
@@ -28,5 +30,3 @@ insert into servico (nome, descricao, preco) values
 ('Corte', 'Corte de cabelo', 30.00),
 ('Barba', 'Aparar e modelar barba', 35.00),
 ('Corte e Barba', 'Corte de cabelo e barba', 60.00);
-
-select * from cliente
