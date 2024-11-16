@@ -48,7 +48,7 @@
             </div>
         </div>
     </nav>
-<div class="background-img">
+<div class="">
     <div class="container d-flex align-items-center justify-content-center my-5 bg-opacity-75">
         <div class="rounded col-10 col-lg-4 shadow-lg p-4 bg-white glass shadow-darker border  border-opacity-75">
             <h1 class="fs-5 my-4 text-center">Crie sua conta e comece agora a marcar horários pelo BarberGO</h1>
@@ -61,10 +61,6 @@
                     <div class="invalid-feedback">Campo obrigatório.</div>
                     <div class="valid-feedback">Preenchido.</div>
                 </div>
-
-                
-
-
                 <div class="input-group mb-3">
                 <label class="input-group-text"><i class="fa-solid fa-envelope fs-4"></i></label>
                     <input type="email" name="email" class="form-control" placeholder="E-mail" required>
