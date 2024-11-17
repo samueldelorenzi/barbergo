@@ -1,3 +1,13 @@
+<?php
+require_once '../models/Agendamentos.php';
+require_once '../controllers/banco.php';
+
+// exibe erros
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,74 +19,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
-    <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .form-card {
-            background-color: #fff;
-            border: 1px solid #d9d9d9;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .form-card-header {
-            background-color: #d2691e; /* chocolate */
-            color: white;
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-        }
-        .form-card-body {
-            padding: 20px;
-        }
-        .btn-custom {
-            background-color: #ff8c00; /* laranja */
-            color: white;
-            border: none;
-        }
-        .btn-custom:hover {
-            background-color: #cc7000; /* marrom */
-        }
-        .form-group label {
-            color: #5a3e2b; /* chocolate escuro */
-            font-weight: bold;
-        }
-        .form-control {
-            border: 1px solid #b5651d; /* chocolate */
-        }
-        .form-control:focus {
-            border-color: #ff8c00; /* laranja */
-            box-shadow: none;
-        }
-        .form-card {
-            background-color: #fff;
-            border: 1px solid #ccc; /* Cinza neutro */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-control {
-            border: 1px solid #ccc; /* Borda cinza neutro nos campos */
-        }
-
-        .form-control:focus {
-            border-color: #ff8c00; /* Laranja ao focar */
-            box-shadow: none;
-        }
-        .btn-primary {
-            background-color: chocolate;
-            border: none;
-            font-weight: 600;
-        }
-
-        .btn-primary:hover {
-            background-color: rgba(76, 52, 19, 0.877);
-            border: none;
-        }
-
-    </style>
+    <link rel="stylesheet" href="../assets/css/style-menus.css">
 </head>
 <body>
     <div class="container">
@@ -84,7 +27,7 @@
             <div class="col-lg-6 col-12">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>3</h3>
+                        <h3><?php echo Agendamento::numAgendamentos($conexao, $_SESSION['id_cliente']) ?></h3>
                         <p>Próximos Agendamentos</p>
                     </div>
                     <div class="icon">
@@ -110,7 +53,7 @@
         <!-- Formulário de Agendamento -->
         <div class="container-fluid d-flex align-items-center justify-content-center bg-opacity-75">
             <div class="rounded col-12 col-lg-8 shadow-lg p-4 bg-white glass shadow-darker border border-opacity-75">
-                <h1 class="fs-5 my-4 text-center">Agendar seu Horário no BarberGO</h1>
+                <h1 class="fs-2 my-4 text-center">Agende seu horário</h1>
                 
                 <form method="POST" action="../controllers/agendamento.php" class="needs-validation pb-3" novalidate autocomplete="on">
                     <!-- Campo para a data com ícone -->
