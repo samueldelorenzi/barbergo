@@ -51,17 +51,21 @@ $agendamentos = Agendamento::listarPorCliente($conexao, $id_cliente);
                                     <td><?php echo $data_fortada; ?></td>
                                     <td><?php echo $hora_formatada; ?></td>
                                     <td><?php echo "R\${$servico['preco']}"; ?></td>
-                                    <td>
+                                    <td >
    
-                                  <a href="?pagina=edit" ?id=<?php echo $agendamento['id']; ?>" class="btn btn-warning fw-bord">
-                                    Editar
-                                </a>
+                                        <div class="text-center">
+                                        <a href="?pagina=edit&id=<?php echo $agendamento['id']; ?>" class="btn btn-warning fw-bord">
+    <i class="fa-solid fa-pen"></i>
+</a>
 
-   
-                                <a href="../controllers/cancelar_agendamento.php?id=<?php echo $agendamento['id']; ?>" class="btn btn-danger fw-bord" onclick="return confirm('Tem certeza que deseja cancelar?');">
-                                    Cancelar
-                                </a>
-</td>
+<a href="../controllers/cancelar_agendamento.php?id=<?php echo $agendamento['id']; ?>" class="btn btn-danger fw-bord" onclick="return confirm('Tem certeza que deseja cancelar?');">
+    <i class="fa-solid fa-trash "></i> 
+</a>
+
+                                        </div>
+
+
+                                    </td>
 
                                 </tr>
                             <?php endforeach; ?>

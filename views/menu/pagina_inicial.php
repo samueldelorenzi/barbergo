@@ -23,7 +23,8 @@ error_reporting(E_ALL);
 </head>
 <body>
 <div class="container">
-    <div class="row pt-3"> <!-- Primeira small-box ocupando 100% da largura -->
+    <div class="row pt-3">
+        <!-- Primeira small-box ocupando 100% da largura -->
         <div class="col-12">
             <div class="small-box bg-primary">
                 <div class="inner">
@@ -69,58 +70,83 @@ error_reporting(E_ALL);
 </div>
 
      
-
-
-        
-        <div class="modal fade container-fluid mx-auto" id="agendamentoModal" tabindex="-1" aria-labelledby="agendamentoModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered ">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center fs-2" id="agendamentoModalLabel">Agende seu horário</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="POST" action="../controllers/agendamento.php" class="needs-validation pb-3" novalidate autocomplete="on">
-                            
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"><i class="fa-solid fa-calendar-day"></i></span>
-                                <input type="date" class="form-control" id="data" name="data" required>
-                            </div>
-
-                           
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
-                                <input type="time" class="form-control" id="hora" name="hora" required>
-                            </div>
-
-                            
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"><i class="fa-solid fa-cut"></i></span>
-                                <select class="form-control" id="servico" name="servico" required>
-                                    <option value="1">Corte de Cabelo</option>
-                                    <option value="2">Barba</option>
-                                    <option value="3">Corte + Barba</option>
-                                </select>
-                            </div>
-
-                            <?php
-                                if (isset($_SESSION['success_message'])) {
-                                    echo '<p class="text-success text-center">' . $_SESSION['success_message'] . '</p>';
-                                    unset($_SESSION['success_message']);
-                                } elseif (isset($_SESSION['error_message'])) {
-                                    echo '<p class="text-danger text-center">' . $_SESSION['error_message'] . '</p>';
-                                    unset($_SESSION['error_message']);
-                                }
-                            ?>
-                        <div class="text-center">
-                           <button type="submit" name="gravar" class="btn btn-primary w-50 mt-3 p-2">Salvar alterações</button>
-                       
-                    </div>
-                </div>
+<div class="modal fade container-fluid mx-auto needs-validation" id="agendamentoModal" tabindex="-1" aria-labelledby="agendamentoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center fs-2" id="agendamentoModalLabel">Agende seu horário</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body">
+                <form method="POST" action="../controllers/agendamento.php" class="needs-validation" novalidate autocomplete="on">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-calendar-day"></i></span>
+                        <input type="date" class="form-control" id="data" name="data" required>
+                        <div class="invalid-feedback">Por favor, selecione uma data.</div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
+                        <input type="time" class="form-control" id="hora" name="hora" required>
+                        <div class="invalid-feedback">Por favor, selecione um horário.</div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-cut"></i></span>
+                        <select class="form-control" id="servico" name="servico" required>
+                            <option value="1">Corte de Cabelo</option>
+                            <option value="2">Barba</option>
+                            <option value="3">Corte + Barba</option>
+                        </select>
+                        <div class="invalid-feedback">Por favor, selecione um serviço.</div>
+                    </div>
+
+                    <?php
+                        if (isset($_SESSION['success_message'])) {
+                            echo '<p class="text-success text-center">' . $_SESSION['success_message'] . '</p>';
+                            unset($_SESSION['success_message']);
+                        } elseif (isset($_SESSION['error_message'])) {
+                            echo '<p class="text-danger text-center">' . $_SESSION['error_message'] . '</p>';
+                            unset($_SESSION['error_message']);
+                        }
+                    ?>
+
+                    <div class="text-center">
+                        <button type="submit" name="gravar" class="btn btn-primary w-50 mt-3 p-2">Salvar alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     </div>
 </body>
+
+    <script>
+  
+    (function () {
+        'use strict'
+        window.addEventListener('load', function () {
+           
+            var forms = document.getElementsByClassName('needs-validation');
+           
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
+
+</script>
 </html>
