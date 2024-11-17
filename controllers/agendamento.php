@@ -16,7 +16,6 @@ error_reporting(E_ALL);
 
 // Verifica se o método de requisição é POST e se os dados foram enviados
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['data']) && !empty($_POST['data']) && isset($_POST['hora']) && !empty($_POST['hora'])) {
-
     $id_cliente = $_SESSION['id_cliente']; 
     $id_servico = mysqli_real_escape_string($conexao, trim($_POST['servico']));
     $data = mysqli_real_escape_string($conexao, trim($_POST['data']));
@@ -39,6 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['data']) && !empty($_P
     }
 
     // Redireciona para a página de agendamento
-    header('Location: ../views/form_agendamento.php');
+    header('Location: ../views/painel_usuario.php?pagina=inicio');
 }
 exit();

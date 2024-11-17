@@ -1,16 +1,22 @@
 <?php
 
 class Cliente {
-    private $id;
-    private $nome;
-    private $email;
+    public $id;
+    public $nome;
+    public $email;
     private $senha;
 
     public function __construct($nome, $email, $senha, $id = null) {
         $this->nome = $nome;
         $this->email = $email;
-        $this->senha = password_hash($senha, PASSWORD_BCRYPT);
+        $this->defineSenha($senha);
         $this->id = $id;
+    }
+
+    public function defineSenha($senha) {
+        if (!empty($senha)) {
+            $this->senha = password_hash($senha, PASSWORD_BCRYPT);
+        }
     }
 
     public function cadastrar($conexao) {
@@ -35,16 +41,17 @@ class Cliente {
         
         return false;
     }
-
-    public function getId() {
-        return $this->id;
-    }
-
-    public function getNome() {
-        return $this->nome;
-    }
-
-    public function getEmail() {
-        return $this->email;
+    public function atualizar($conexao) {
+        if (empty($this->senha)) 
+        {
+            $stmt = $conexao->prepare("UPDATE cliente SET nome = ?, email = ? WHERE id = ?");
+            $stmt->bind_param("ssi", $this->nome, $this->email, $this->id);
+        } 
+        else 
+        {
+            $stmt = $conexao->prepare("UPDATE cliente SET nome = ?, email = ?, senha = ? WHERE id = ?");
+            $stmt->bind_param("sssi", $this->nome, $this->email, $this->senha, $this->id);
+        }
+        return $stmt->execute();
     }
 }

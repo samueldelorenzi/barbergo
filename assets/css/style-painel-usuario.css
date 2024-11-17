@@ -1,0 +1,18 @@
+body {
+    background-color: #e0e0e0c1;
+}
+.main-sidebar {
+    background-color: #212529;
+}
+.small-box {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    transition: all 0.3s ease-in-out;
+}
+.small-box:hover {
+    transform: scale(1.05);
+}
+.nav-sidebar .nav-link.active {
+    background-color: chocolate !important;
+    color: black !important;
+}

@@ -21,7 +21,7 @@ function get_servico_by_id($conexao, $id_servico)
     if ($stmt) 
     {
         // Vincula o parâmetro id
-        mysqli_stmt_bind_param($stmt, "s", $id_servico);
+        mysqli_stmt_bind_param($stmt, "i", $id_servico);
         
         // Executa a declaração SQL
         mysqli_stmt_execute($stmt);
@@ -45,7 +45,11 @@ function get_servico_by_id($conexao, $id_servico)
     else 
     {
         // Retorna uma string vazia se a preparação da declaração falhar
-        return "";
+        return [
+            'nome' => 'vazio',
+            'descricao' => 'vazio',
+            'preco' => 'vazio'
+        ];
     }
 }
 

@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nome']) && !empty($_P
     // Checa se o email já está cadastrado
     if ($resultado->num_rows > 0) {
         $_SESSION['error_message'] = "Ops, este email já está cadastrado. Faça login.";
-        header('Location: ../views/cadastro.php');
+        header('Location: ../views/form_cadastro.php');
         exit();
     }
 
@@ -48,5 +48,5 @@ else {
     $_SESSION['error_message'] = "Preencha todos os campos.";
 }
 // Redireciona para a página de cadastro que exibe a mensagem
-header('Location: ../views/cadastro.php');
+header('Location: ../views/form_cadastro.php');
 exit();

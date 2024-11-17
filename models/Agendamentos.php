@@ -1,11 +1,13 @@
 <?php
 
+date_default_timezone_set('America/Sao_Paulo');
+
 class Agendamento {
-    private $conexao;
-    private $id_cliente;
-    private $id_servico;
-    private $dia;
-    private $hora;
+    public $conexao;
+    public $id_cliente;
+    public $id_servico;
+    public $dia;
+    public $hora;
 
     public function __construct($conexao, $id_cliente, $id_servico = null, $dia = null, $hora = null) {
         $this->conexao = $conexao;
@@ -31,6 +33,12 @@ class Agendamento {
 
     // Verificar disponibilidade do horário
     public function verificarDisponibilidade() {
+        if ($this-> dia < date('Y-m-d')) {
+            return false;
+        }
+        if ($this->dia == date('Y-m-d') && $this->hora < date('H:i')) {
+            return false;
+        }
         $sql = "SELECT COUNT(*) FROM agendamento WHERE dia = ? AND hora = ?";
         $stmt = $this->conexao->prepare($sql);
         
@@ -48,7 +56,7 @@ class Agendamento {
 
     // Listar agendamentos futuros de um cliente
     public static function listarPorCliente($conexao, $id_cliente) {
-        $sql = "SELECT id_servico, dia, hora FROM agendamento WHERE id_cliente = ? AND CONCAT(dia, ' ', hora) > NOW()";
+        $sql = "SELECT id, id_servico, dia, hora FROM agendamento WHERE id_cliente = ? AND CONCAT(dia, ' ', hora) > NOW()";
         $stmt = $conexao->prepare($sql);
         
         if ($stmt) {
@@ -65,5 +73,32 @@ class Agendamento {
             return $agendamentos;
         }
         return [];
+    }
+    public static function numAgendamentos ($conexao, $id_cliente) {
+        $sql = "SELECT COUNT(*) FROM agendamento WHERE id_cliente = ? AND CONCAT(dia, ' ', hora) > NOW()";
+        $stmt = $conexao->prepare($sql);
+        
+        if ($stmt) {
+            $count = 0;  // Inicializando a variável
+            $stmt->bind_param("i", $id_cliente);
+            $stmt->execute();
+            $stmt->bind_result($count);
+            $stmt->fetch();
+            $stmt->close();
+            return $count;
+        }
+        return 0;
+    }
+    public static function cancelar($conexao, $id) {
+        $sql = "DELETE FROM agendamento WHERE id = ?";
+        $stmt = $conexao->prepare($sql);
+        
+        if ($stmt) {
+            $stmt->bind_param("i", $id);
+            $result = $stmt->execute();
+            $stmt->close();
+            return true;
+        }
+        return false;
     }
 }
