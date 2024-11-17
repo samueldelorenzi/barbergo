@@ -30,7 +30,7 @@ class Agendamento {
         }
         return false;
     }
-
+    
     // Verificar disponibilidade do horário
     public function verificarDisponibilidade() {
         if ($this-> dia < date('Y-m-d')) {
@@ -74,6 +74,29 @@ class Agendamento {
         }
         return [];
     }
+    
+
+        // Função para listar agendamento por ID
+        public static function listarPorId($conexao, $id_agendamento) {
+            $query = "SELECT * FROM agendamento WHERE id = ?";
+            $stmt = mysqli_prepare($conexao, $query);
+            mysqli_stmt_bind_param($stmt, 'i', $id_agendamento);
+            mysqli_stmt_execute($stmt);
+            $resultado = mysqli_stmt_get_result($stmt);
+            
+            return mysqli_fetch_assoc($resultado); // Retorna um único agendamento
+        }
+    
+        // Outras funções do modelo (listar todos, listar por cliente, etc.)
+    
+    
+    public static function atualizar($conexao, $id_agendamento, $id_servico, $data, $hora) {
+        $query = "UPDATE agendamento SET id_servico = ?, dia = ?, hora = ? WHERE id = ?";
+        $stmt = mysqli_prepare($conexao, $query);
+        mysqli_stmt_bind_param($stmt, 'issi', $id_servico, $data, $hora, $id_agendamento);
+        return mysqli_stmt_execute($stmt);
+    }
+    
     public static function numAgendamentos ($conexao, $id_cliente) {
         $sql = "SELECT COUNT(*) FROM agendamento WHERE id_cliente = ? AND CONCAT(dia, ' ', hora) > NOW()";
         $stmt = $conexao->prepare($sql);

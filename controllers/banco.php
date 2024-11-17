@@ -17,3 +17,5 @@ $conexao = mysqli_connect($bdServidor, $bdUsuario, $bdSenha, $bdBanco);
 if (!$conexao) {
     die("Connection failed: " . mysqli_connect_error());
 }
+// Conectar ao banco de dados
+

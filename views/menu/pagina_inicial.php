@@ -22,77 +22,105 @@ error_reporting(E_ALL);
     <link rel="stylesheet" href="../assets/css/style-menus.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row pt-3">
-            <div class="col-lg-6 col-12">
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h3><?php echo Agendamento::numAgendamentos($conexao, $_SESSION['id_cliente']) ?></h3>
-                        <p>Próximos Agendamentos</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <a href="?pagina=agendamento" class="small-box-footer">Ver Agendamentos <i class="fas fa-arrow-circle-right"></i></a>
+<div class="container">
+    <div class="row pt-3"> <!-- Primeira small-box ocupando 100% da largura -->
+        <div class="col-12">
+            <div class="small-box bg-primary">
+                <div class="inner">
+                    <h3>Agendar</h3>
+                    <p>Agende seu horário agora</p>
                 </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="small-box bg-success">
-                    <div class="inner">
-                        <h3>Perfil</h3>
-                        <p>Atualize suas informações</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <a href="?pagina=perfil" class="small-box-footer">Ver Perfil <i class="fas fa-arrow-circle-right"></i></a>
+                <div class="icon">
+                    <i class="fas fa-calendar-alt"></i>
                 </div>
+                <a href="#" class="small-box-footer" data-toggle="modal" data-target="#agendamentoModal">
+                    Agendar Horário <i class="fas fa-arrow-circle-right"></i>
+                </a>
             </div>
         </div>
 
-        <!-- Formulário de Agendamento -->
-        <div class="container-fluid d-flex align-items-center justify-content-center bg-opacity-75">
-            <div class="rounded col-12 col-lg-8 shadow-lg p-4 bg-white glass shadow-darker border border-opacity-75">
-                <h1 class="fs-2 my-4 text-center">Agende seu horário</h1>
-                
-                <form method="POST" action="../controllers/agendamento.php" class="needs-validation pb-3" novalidate autocomplete="on">
-                    <!-- Campo para a data com ícone -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa-solid fa-calendar-day"></i></span>
-                        <input type="date" class="form-control" id="data" name="data" required>
-                    </div>
-
-                    <!-- Campo para a hora com ícone -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
-                        <input type="time" class="form-control" id="hora" name="hora" required>
-                    </div>
-
-                    <!-- Campo para o serviço com ícone -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa-solid fa-cut"></i></span>
-                        <select class="form-control" id="servico" name="servico" required>
-                            <option value="1">Corte de Cabelo</option>
-                            <option value="2">Barba</option>
-                            <option value="3">Corte + Barba</option>
-                        </select>
-                    </div>
-
-                    <?php
-                        if (isset($_SESSION['success_message'])) {
-                            echo '<p class="text-success text-center">' . $_SESSION['success_message'] . '</p>';
-                            unset($_SESSION['success_message']);
-                        } elseif (isset($_SESSION['error_message'])) {
-                            echo '<p class="text-danger text-center">' . $_SESSION['error_message'] . '</p>';
-                            unset($_SESSION['error_message']);
-                        }
-                    ?>
-
-                    <!-- Botão de envio -->
-                    <button type="submit" name="gravar" class="btn btn-primary w-100 mt-3">Agendar</button>
-                </form>
+        <!-- Segunda e terceira small-box ocupando 50% cada uma -->
+        <div class="col-lg-6 col-12">
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3><?php echo Agendamento::numAgendamentos($conexao, $_SESSION['id_cliente']) ?></h3>
+                    <p>Próximos Agendamentos</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <a href="?pagina=agendamento" class="small-box-footer">Ver Agendamentos <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
+
+        <div class="col-lg-6 col-12">
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>Perfil</h3>
+                    <p>Atualize suas informações</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <a href="?pagina=perfil" class="small-box-footer">Ver Perfil <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+     
+
+
+        
+        <div class="modal fade container-fluid mx-auto" id="agendamentoModal" tabindex="-1" aria-labelledby="agendamentoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center fs-2" id="agendamentoModalLabel">Agende seu horário</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="../controllers/agendamento.php" class="needs-validation pb-3" novalidate autocomplete="on">
+                            
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-calendar-day"></i></span>
+                                <input type="date" class="form-control" id="data" name="data" required>
+                            </div>
+
+                           
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
+                                <input type="time" class="form-control" id="hora" name="hora" required>
+                            </div>
+
+                            
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-cut"></i></span>
+                                <select class="form-control" id="servico" name="servico" required>
+                                    <option value="1">Corte de Cabelo</option>
+                                    <option value="2">Barba</option>
+                                    <option value="3">Corte + Barba</option>
+                                </select>
+                            </div>
+
+                            <?php
+                                if (isset($_SESSION['success_message'])) {
+                                    echo '<p class="text-success text-center">' . $_SESSION['success_message'] . '</p>';
+                                    unset($_SESSION['success_message']);
+                                } elseif (isset($_SESSION['error_message'])) {
+                                    echo '<p class="text-danger text-center">' . $_SESSION['error_message'] . '</p>';
+                                    unset($_SESSION['error_message']);
+                                }
+                            ?>
+                        <div class="text-center">
+                           <button type="submit" name="gravar" class="btn btn-primary w-50 mt-3 p-2">Salvar alterações</button>
+                       
+                    </div>
+                </div>
+            </div>
+
     </div>
 </body>
 </html>

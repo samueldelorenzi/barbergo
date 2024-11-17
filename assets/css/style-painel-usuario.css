@@ -15,4 +15,6 @@ body {
 .nav-sidebar .nav-link.active {
     background-color: chocolate !important;
     color: black !important;
+}.fa-calendar-day,.fa-clock,.fa-cut{
+    color: rgba(76, 52, 19, 0.877);
 }

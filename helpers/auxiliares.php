@@ -9,7 +9,9 @@ error_reporting(E_ALL);
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-
+// Função para buscar todos os serviços no banco de dadosfunction get_servicos($conexao) {
+    
+    
 function get_servico_by_id($conexao, $id_servico)
 {
     // Define a consulta SQL

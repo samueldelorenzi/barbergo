@@ -35,6 +35,10 @@ switch ($pagina) {
     case 'perfil':
         $conteudo = 'menu/meu_perfil.php';
         break;
+
+    case "edit":
+        $conteudo = 'menu/edit.php';
+        break;
     default:
         $conteudo = 'menu/pagina_inicial.php';
         break;
@@ -123,9 +127,9 @@ switch ($pagina) {
             </div>
         </aside>
 
-        <!-- Content Wrapper -->
+       
         <div class="content-wrapper">
-            <!-- Main content -->
+           
             <section class="content">
                 <div class="container-fluid">
                    
