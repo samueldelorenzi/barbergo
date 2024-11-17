@@ -151,8 +151,8 @@
         <div class="row py-3">
             <div class="col-md-3 mb-3 text-center text-md-left">
                 <h3 class="fs-5">Termo de Responsabilidade</h3>
-                <a href="#" class="nav-link">Privacidade</a><br>
-                <a href="#" class="nav-link">Termos de Uso</a>
+                <a href="./views/privacy.php" class="nav-link">Privacidade</a><br>
+                <a href="./views/term.php" class="nav-link">Termos de Uso</a>
             </div>
             <hr class="w-75 mx-auto d-md-none">
             <div class="col-md-3 mb-3 text-center text-md-left">
@@ -162,8 +162,8 @@
             <hr class="w-75 mx-auto d-md-none">
             <div class="col-md-3 mb-3 text-center text-md-left">
                 <h3 class="fs-5">Feedback e Suporte</h3>
-                <a href="#" class="nav-link">Feedback e Avaliações</a><br>
-                <a href="#" class="nav-link">Suporte e Contato</a>
+                <a href="views/feedback.php" class="nav-link">Feedback e Avaliações</a><br>
+                <a href="views/suport.php" class="nav-link">Suporte e Contato</a>
             </div>
             <hr class="w-75 mx-auto d-md-none">
             <div class="col-md-3 mb-3 text-center text-md-left">

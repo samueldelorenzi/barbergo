@@ -15,13 +15,13 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark px-4 sticky-top top-0">
         <div class="container-fluid d-flex align-items-center justify-content-between">
-            <!-- Logo e Nome à esquerda (define uma largura fixa usando flex-grow-1 para ocupar espaço) -->
+           
             <div class="d-flex align-items-center flex-grow-1 w-50">
                 <img src="../assets/img/icone.png" class="img" alt="Logo BarberGO">
                 <p class="text-white fw-bold my-auto fs-3 ms-2">BarberGO</p>
             </div>
 
-            <!-- Itens de navegação no centro -->
+            
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="../index.php">Home</a></li>
@@ -31,7 +31,7 @@
                 </ul>
             </div>
 
-            <!-- Botão de Login à direita, com largura igual à div da esquerda -->
+            
             <div class="d-flex justify-content-end flex-grow-1 w-50">
                 <a href="form_login.php" class="btn btn-warning login">Login</a>
             </div>
@@ -91,69 +91,65 @@
                     <td>Responsável pela criação de interfaces de usuário interativas e responsivas.</td>
                     <td><img src="../assets/img/Equipa/paulo.jpg"class="img-fluid" alt="Foto de Paulo Bumba" style="width: 150px; height: 100%;"></td>
                 </tr>
-                <!-- Adicione outras linhas da equipe conforme necessário -->
+               
             </tbody>
         </table>
     </div>
 </section>
-        <section class="container my-5">
-       
-        <section class="container my-5">
-        <h2 class="text-center">Tecnologias Usadas</h2>
-        <div class="table-responsive mt-4">
-            <table class="table table-bordered text-center">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Frontend</th>
-                        <th>Backend</th>
-                        <th>Banco de Dados</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <!-- Frontend Column -->
-                        <td>
-                            <div>
-                                <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5">
-                                <p>HTML5</p>
-                            </div>
-                            <div>
-                                <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3">
-                                <p>CSS3</p>
-                            </div>
-                            <div>
-                                <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
-                                <p>JavaScript</p>
-                            </div>
-                            <div>
-                                <img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap">
-                                <p>Bootstrap</p>
-                            </div>
-                        </td>
-        
-                        <!-- Backend Column -->
-                        <td>
-                            <div>
-                                <img src="https://img.icons8.com/color/48/000000/php.png" alt=".NET">
-                                <p>PHP</p>
-                            </div>
-        
-        
-                        </td>
-        
-                        <td>
-                            <div>
-                                <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL">
-                                <p>MySQL</p>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<section class="my-5">
+            <h2 class="text-center">Tecnologias Usadas</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-center mb-4">
+                        <div class="card-body">
+                            <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5" class="mb-3">
+                            <p>HTML5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center mb-4">
+                        <div class="card-body">
+                            <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3" class="mb-3">
+                            <p>CSS3</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center mb-4">
+                        <div class="card-body">
+                            <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" class="mb-3">
+                            <p>JavaScript</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center mb-4">
+                        <div class="card-body">
+                            <img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap" class="mb-3">
+                            <p>Bootstrap</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center mb-4">
+                        <div class="card-body">
+                            <img src="https://img.icons8.com/color/48/000000/php.png" alt="PHP" class="mb-3">
+                            <p>PHP</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center mb-4">
+                        <div class="card-body">
+                            <img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL" class="mb-3">
+                            <p>MySQL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
-
 
     <footer class="container-fluid text-light bg-dark ">
     <div class="row py-3">
@@ -186,7 +182,7 @@
         </div>
     </div>
 </footer>
-    <!-- Bootstrap JS and dependencies -->
+   
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
