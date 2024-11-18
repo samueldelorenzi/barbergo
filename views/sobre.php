@@ -87,11 +87,22 @@
             <tbody>
                 <tr>
                     <td><strong>Paulo Mário Valente Bumba</strong></td>
-                    <td>Desenvolvedor Frontend</td>
+                    <td>Desenvolvedor Front-End</td>
                     <td>Responsável pela criação de interfaces de usuário interativas e responsivas.</td>
                     <td><img src="../assets/img/Equipa/paulo.jpg"class="img-fluid" alt="Foto de Paulo Bumba" style="width: 150px; height: 100%;"></td>
                 </tr>
-               
+                <tr>
+                    <td><strong>Wesllen da Cruz</strong></td>
+                    <td>Desenvolvedor Front-End</td>
+                    <td>Responsável pela criação de páginas personalizadas que melhoram a experiência ao usar o BarberGO.</td>
+                    <td><img src="../assets/img/Equipa/wesllen.jpg"class="img-fluid" alt="Foto de Wesllen da Cruz" style="width: 150px; height: 100%;"></td>
+                </tr>   
+                <tr>
+                    <td><strong>Samuel De Lorenzi Ribeiro</strong></td>
+                    <td>Desenvolvedor Back-End</td>
+                    <td>Responsável pela criação de controllers, models e outras funcionalidades.</td>
+                    <td><img src="../assets/img/Equipa/samuel.jpg"class="img-fluid" alt="Foto de Samuel Ribeiro" style="width: 150px; height: 100%;"></td>
+                </tr>         
             </tbody>
         </table>
     </div>
