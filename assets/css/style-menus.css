@@ -5,19 +5,19 @@ body {
 }
 
 .highlight {
-    background-color: chocolate !important; /* Cor de destaque, você pode mudar para o que preferir */
+    background-color: chocolate !important;
     font-weight: bold;
 }
 
 
 .btn-custom {
-    background-color: #ff8c00; /* laranja */
+    background-color: #ff8c00;
     color: white;
     border: none;
 }
 
 .btn-custom:hover {
-    background-color: #cc7000; /* marrom */
+    background-color: #cc7000;
 }
 
 .btn-primary {
@@ -33,13 +33,13 @@ body {
 
 .form-card {
     background-color: #fff;
-    border: 1px solid #ccc; /* Cinza neutro */
+    border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-card-header {
-    background-color: #d2691e; /* chocolate */
+    background-color: #d2691e;
     color: white;
     padding: 15px;
     text-align: center;
@@ -51,15 +51,30 @@ body {
 }
 
 .form-group label {
-    color: #5a3e2b; /* chocolate escuro */
+    color: #5a3e2b;
     font-weight: bold;
 }
 
 .form-control {
-    border: 1px solid #ccc; /* Borda cinza neutro nos campos */
+    border: 1px solid #ccc;
 }
 
 .form-control:focus {
-    border-color: #ff8c00; /* Laranja ao focar */
+    border-color: #ff8c00;
     box-shadow: none;
+}
+
+.toast-container {
+    position: fixed;
+    top: 40px;
+    right: 0%;
+    width: 100vw;
+    padding: 15px;
+    z-index: 1055;
+}
+
+.toast {
+    width: 100vw;
+    margin: 0 auto 10px;
+    border-radius: 5px;
 }

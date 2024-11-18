@@ -1,17 +1,16 @@
 <?php
-// Inicia sessão se não estiver iniciada
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Exibe erros
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,24 +21,9 @@ error_reporting(E_ALL);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/style-menus.css">
-    <style>
-        .toast-container {
-            position: fixed;
-            top: 40px;
-            right: 0%;
-            width:  100vw;
-            padding: 15px;
-            z-index: 1055;
-        }
-        .toast {
-            width: 100vw;
-            margin: 0 auto 10px;
-            border-radius: 5px;
-        }
-    </style>
 </head>
+
 <body>
-   
     <div class="toast-container">
         <?php if (isset($_SESSION['success_message'])): ?>
             <div class="toast align-items-center text-bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -63,8 +47,6 @@ error_reporting(E_ALL);
             <?php unset($_SESSION['error_message']); ?>
         <?php endif; ?>
     </div>
-
-   
     <div class="container mt-5">
         <div class="card">
             <h1 class="card-header text-center">Editar Perfil</h1>
@@ -88,16 +70,13 @@ error_reporting(E_ALL);
             </form>
         </div>
     </div>
-
-   
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const toastElList = [].slice.call(document.querySelectorAll('.toast'));
-            toastElList.forEach(function (toastEl) {
+            toastElList.forEach(function(toastEl) {
                 const toast = new bootstrap.Toast(toastEl);
                 toast.show();
 
-               
                 setTimeout(() => {
                     toast.dispose();
                 }, 5000);
@@ -105,4 +84,5 @@ error_reporting(E_ALL);
         });
     </script>
 </body>
+
 </html>

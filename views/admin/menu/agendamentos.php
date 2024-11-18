@@ -28,7 +28,8 @@ foreach ($agendamentos as $agendamento) {
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,6 +41,7 @@ foreach ($agendamentos as $agendamento) {
     <link rel="shortcut icon" href="../../assets/img/icone.png" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/style-menus.css">
 </head>
+
 <body>
     <div class="container mt-5">
         <div class="card">
@@ -57,49 +59,48 @@ foreach ($agendamentos as $agendamento) {
                     </thead>
                     <tbody>
                     <tbody>
-                        <?php if (!empty($agendamentos_hoje)) : 
+                        <?php if (!empty($agendamentos_hoje)) :
                             $soma = 0;
                             $hora_atual = strtotime(date('H:i')); // Hora atual
                             $proximo_horario = null;
                             $proxima_linha = null;
                         ?>
-                        <?php foreach ($agendamentos_hoje as $index => $agendamento) : 
-                            $servico = get_servico_by_id($conexao, $agendamento['id_servico']);
-                            $cliente = Cliente::get_cliente_by_id($conexao, $agendamento['id_cliente']);
-                            $hora_agendamento = strtotime($agendamento['hora']); // Hora do agendamento
-                            $data_formatada = converte_data_usuario($agendamento['dia']);
-                            $hora_formatada = date('H:i', $hora_agendamento);
-                            $soma += $servico['preco'];
+                            <?php foreach ($agendamentos_hoje as $index => $agendamento) :
+                                $servico = get_servico_by_id($conexao, $agendamento['id_servico']);
+                                $cliente = Cliente::get_cliente_by_id($conexao, $agendamento['id_cliente']);
+                                $hora_agendamento = strtotime($agendamento['hora']); // Hora do agendamento
+                                $data_formatada = converte_data_usuario($agendamento['dia']);
+                                $hora_formatada = date('H:i', $hora_agendamento);
+                                $soma += $servico['preco'];
 
-                            // Verifica se é o próximo horário após a hora atual
-                            if ($hora_atual < $hora_agendamento && ($proximo_horario === null || $hora_agendamento < $proximo_horario)) {
-                                $proximo_horario = $hora_agendamento;
-                                $proxima_linha = $index; // Armazena o índice da linha que será destacada
-                            }
-                        ?>
-                            <tr class="<?php echo ($proxima_linha === $index) ? 'highlight' : ''; ?>">
-                                <td><?php echo "{$cliente['nome']}"; ?></td>
-                                <td><?php echo "{$servico['nome']}"; ?></td>
-                                <td><?php echo $data_formatada; ?></td>
-                                <td><?php echo $hora_formatada; ?></td>
-                                <td><?php echo "R\${$servico['preco']}"; ?></td>
+                                // Verifica se é o próximo horário após a hora atual
+                                if ($hora_atual < $hora_agendamento && ($proximo_horario === null || $hora_agendamento < $proximo_horario)) {
+                                    $proximo_horario = $hora_agendamento;
+                                    $proxima_linha = $index; // Armazena o índice da linha que será destacada
+                                }
+                            ?>
+                                <tr class="<?php echo ($proxima_linha === $index) ? 'highlight' : ''; ?>">
+                                    <td><?php echo "{$cliente['nome']}"; ?></td>
+                                    <td><?php echo "{$servico['nome']}"; ?></td>
+                                    <td><?php echo $data_formatada; ?></td>
+                                    <td><?php echo $hora_formatada; ?></td>
+                                    <td><?php echo "R\${$servico['preco']}"; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                            <tr>
+                                <td colspan="4" class="text-right fw-bold">Total diário</td>
+                                <td><?php echo "R\${$soma}"; ?></td>
                             </tr>
-                        <?php endforeach; ?>
-                        <tr>
-                            <td colspan="4" class="text-right fw-bold">Total diário</td>
-                            <td><?php echo "R\${$soma}"; ?></td>
-                        </tr>
                         <?php else : ?>
-                        <tr>
-                            <td colspan="6" class="text-center">
-                                <a class="btn btn-primary btn-sm">
-                                    Não há agendamentos. Aproveite o descanso.
-                                </a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td colspan="6" class="text-center">
+                                    <a class="btn btn-primary btn-sm">
+                                        Não há agendamentos. Aproveite o descanso.
+                                    </a>
+                                </td>
+                            </tr>
                         <?php endif; ?>
                     </tbody>
-
                 </table>
             </div>
         </div>
@@ -123,11 +124,11 @@ foreach ($agendamentos as $agendamento) {
                         <?php if (!empty($agendamentos_amanha)) : ?>
                             <?php foreach ($agendamentos_amanha as $agendamento) : ?>
                                 <?php
-                                    // Obter detalhes do serviço
-                                    $servico = get_servico_by_id($conexao, $agendamento['id_servico']);
-                                    $cliente = Cliente::get_cliente_by_id($conexao, $agendamento['id_cliente']);
-                                    $hora_formatada = date('H:i', strtotime($agendamento['hora']));
-                                    $data_fortada = converte_data_usuario($agendamento['dia']);
+                                // Obter detalhes do serviço
+                                $servico = get_servico_by_id($conexao, $agendamento['id_servico']);
+                                $cliente = Cliente::get_cliente_by_id($conexao, $agendamento['id_cliente']);
+                                $hora_formatada = date('H:i', strtotime($agendamento['hora']));
+                                $data_fortada = converte_data_usuario($agendamento['dia']);
                                 ?>
                                 <tr>
                                     <td><?php echo "{$cliente['nome']}"; ?></td>
@@ -170,11 +171,11 @@ foreach ($agendamentos as $agendamento) {
                         <?php if (!empty($agendamentos_demais)) : ?>
                             <?php foreach ($agendamentos_demais as $agendamento) : ?>
                                 <?php
-                                    // Obter detalhes do serviço
-                                    $servico = get_servico_by_id($conexao, $agendamento['id_servico']);
-                                    $cliente = Cliente::get_cliente_by_id($conexao, $agendamento['id_cliente']);
-                                    $hora_formatada = date('H:i', strtotime($agendamento['hora']));
-                                    $data_fortada = converte_data_usuario($agendamento['dia']);
+                                // Obter detalhes do serviço
+                                $servico = get_servico_by_id($conexao, $agendamento['id_servico']);
+                                $cliente = Cliente::get_cliente_by_id($conexao, $agendamento['id_cliente']);
+                                $hora_formatada = date('H:i', strtotime($agendamento['hora']));
+                                $data_fortada = converte_data_usuario($agendamento['dia']);
                                 ?>
                                 <tr>
                                     <td><?php echo "{$cliente['nome']}"; ?></td>
@@ -199,4 +200,5 @@ foreach ($agendamentos as $agendamento) {
         </div>
     </div>
 </body>
+
 </html>

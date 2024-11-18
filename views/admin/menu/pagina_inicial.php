@@ -18,6 +18,7 @@ if (isset($_SESSION['success_message']) || isset($_SESSION['error_message'])) {
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,22 +30,24 @@ if (isset($_SESSION['success_message']) || isset($_SESSION['error_message'])) {
     <link rel="shortcut icon" href="../../assets/img/icone.png" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/style-menus.css">
 </head>
+
 <body>
-<div class="container">
-    <div class="row pt-3">
-        <div class="col-12">
-            <div class="small-box bg-info">
-                <div class="inner">
-                    <h3><?php echo Agendamento::totalAgendamentos($conexao) ?></h3>
-                    <p>Próximos Agendamentos</p>
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-12">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3><?php echo Agendamento::totalAgendamentos($conexao) ?></h3>
+                        <p>Próximos Agendamentos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <a href="?pagina=agendamento" class="small-box-footer">Ver Agendamentos <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-                <div class="icon">
-                    <i class="fas fa-calendar-alt"></i>
-                </div>
-                <a href="?pagina=agendamento" class="small-box-footer">Ver Agendamentos <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>

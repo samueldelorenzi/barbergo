@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback e Avaliação - BarberGO</title>
-
-    <!-- Bootstrap CSS --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark px-4 sticky-top top-0">
@@ -30,11 +32,9 @@
             </div>
         </div>
     </nav>
-
     <div class="container my-5">
         <h1 class="text-center">Feedback e Avaliação</h1>
         <p class="text-center">Sua opinião é muito importante para nós! Por favor, avalie nossos serviços e nos diga o que podemos melhorar.</p>
-
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -47,12 +47,10 @@
                                 <label for="name" class="form-label">Seu Nome</label>
                                 <input type="text" class="form-control" id="name" name="name" required>
                             </div>
-
                             <div class="mb-3">
                                 <label for="email" class="form-label">Seu E-mail</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
                             </div>
-
                             <div class="mb-3">
                                 <label for="rating" class="form-label">Avaliação (1 a 5 estrelas)</label>
                                 <select class="form-select" id="rating" name="rating" required>
@@ -63,24 +61,19 @@
                                     <option value="5">5 Estrelas</option>
                                 </select>
                             </div>
-
                             <div class="mb-3">
                                 <label for="feedback" class="form-label">Seu Feedback</label>
                                 <textarea class="form-control" id="feedback" name="feedback" rows="4" required></textarea>
                             </div>
-
                             <div class="text-center">
-                    <button type="submit" name="gravar" class="btn btn-warning w-50 mt-3 p-2">Salvar alterações</button>
-                </div>
+                                <button type="submit" name="gravar" class="btn btn-warning w-50 mt-3 p-2">Salvar alterações</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
-        
     </div>
-
     <footer class="container-fluid text-light bg-dark ">
         <div class="row py-3">
             <div class="col-md-3 mb-3 text-center text-md-left">
@@ -110,8 +103,8 @@
                 <p>&copy; BarberGO 2024</p>
             </div>
         </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </footer>
 </body>
+
 </html>

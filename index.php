@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +12,14 @@
     <link rel="stylesheet" href="assets/css/style-home.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark px-4 sticky-top top-0">
         <div class="container-fluid d-flex align-items-center justify-content-between">
-            <!-- Logo e Nome à esquerda (define uma largura fixa usando flex-grow-1 para ocupar espaço) -->
             <div class="d-flex align-items-center flex-grow-1 w-50">
                 <img src="assets/img/icone.png" class="img" alt="Logo BarberGO">
                 <p class="text-white fw-bold my-auto fs-3 ms-2">BarberGO</p>
             </div>
-
-            <!-- Itens de navegação no centro -->
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="btn btn btn-warning mx-md-1 fs-6" href="#home">Home</a></li>
@@ -29,15 +28,11 @@
                     <li class="nav-item"><a class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg" href="views/form_cadastro.php">Cadastro</a></li>
                 </ul>
             </div>
-
-            <!-- Botão de Login à direita, com largura igual à div da esquerda -->
             <div class="d-flex justify-content-end flex-grow-1 w-50">
                 <a href="views/form_login.php" class="btn btn-outline-warning mx-md-1 fs-6 remove-outline-lg">Login</a>
             </div>
         </div>
     </nav>
-
-
     <section class="carousel slide" id="barberCarousel" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#barberCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -64,14 +59,12 @@
             <span class="visually-hidden">Next</span>
         </button>
     </section>
-
     <section id="home">
         <div class="container text-center">
             <h1 class="">Agende seus horários pelo <span class="text-warning">BarberGO</span> e descubra a <span class="text-warning">praticidade</span></h1>
             <p class="description">Com o BarberGO, você pode agendar seus horários com facilidade e rapidez, garantindo que seu visual esteja sempre impecável.<br>Descubra a praticidade e a conveniência de escolher seus serviços e barbeiros favoritos, tudo em um único lugar.<br>Experimente agora e veja a diferença em sua rotina!</p>
         </div>
     </section>
-
     <h2 id="services" class="text-center my-md-4">Serviços para escolher</h2>
     <h3 class="text-center">Decida seu atendimento já na hora de marcar horários</h3>
     <section id="services" class="my-5 services">
@@ -110,7 +103,6 @@
             </div>
         </div>
     </section>
-
     <h2 class="mb-4 text-center">Nossos clientes</h2>
     <h3 class="text-center my-md-3">Alguns relatos de quem já usa o BarberGO</h3>
     <section id="barbers" class="my-5">
@@ -146,7 +138,6 @@
             </div>
         </div>
     </section>
-
     <footer class="container-fluid text-light bg-dark ">
         <div class="row py-3">
             <div class="col-md-3 mb-3 text-center text-md-left">
@@ -177,10 +168,10 @@
             </div>
         </div>
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/animation.js"></script>
     <script src="assets/js/barberChange.js"></script>
 </body>
+
 </html>
