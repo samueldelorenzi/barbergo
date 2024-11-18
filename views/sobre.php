@@ -102,7 +102,13 @@
                     <td>Desenvolvedor Back-End</td>
                     <td>Responsável pela criação de controllers, models e outras funcionalidades.</td>
                     <td><img src="../assets/img/Equipa/samuel.jpg"class="img-fluid" alt="Foto de Samuel Ribeiro" style="width: 150px; height: 100%;"></td>
-                </tr>         
+                </tr>        
+                <tr>
+                    <td><strong>Willian Ferreira</strong></td>
+                    <td>Desenvolvedor Back-End</td>
+                    <td>Responsável pela criação de códigos que garantem o funcionamento do BarberGO.</td>
+                    <td><img src="../assets/img/Equipa/willian.jpg"class="img-fluid" alt="Foto de Willian Ferreira" style="width: 150px; height: 100%;"></td>
+                </tr>    
             </tbody>
         </table>
     </div>
