@@ -11,7 +11,16 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 // Função para buscar todos os serviços no banco de dadosfunction get_servicos($conexao) {
     
+function get_servicos ($conexao) {
+    // Define a consulta SQL
+    $sql = "SELECT id, nome, descricao, preco FROM servico";
     
+    // Executa a consulta SQL
+    $resultado = mysqli_query($conexao, $sql);
+    
+    // Retorna os resultados como um array
+    return mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+}
 function get_servico_by_id($conexao, $id_servico)
 {
     // Define a consulta SQL

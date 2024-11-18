@@ -4,6 +4,12 @@ body {
     color: #333;
 }
 
+.highlight {
+    background-color: chocolate !important; /* Cor de destaque, você pode mudar para o que preferir */
+    font-weight: bold;
+}
+
+
 .btn-custom {
     background-color: #ff8c00; /* laranja */
     color: white;

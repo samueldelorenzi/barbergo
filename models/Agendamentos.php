@@ -54,9 +54,27 @@ class Agendamento {
         return false;
     }
 
+    public static function listar($conexao) {
+        $sql = "SELECT id, id_cliente, id_servico, dia, hora FROM agendamento ORDER BY dia ASC, hora ASC";
+        $stmt = $conexao->prepare($sql);
+        
+        if ($stmt) {
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $agendamentos = [];
+            
+            while ($row = $result->fetch_assoc()) {
+                $agendamentos[] = $row;
+            }
+            
+            $stmt->close();
+            return $agendamentos;
+        }
+        return [];
+    }
     // Listar agendamentos futuros de um cliente
     public static function listarPorCliente($conexao, $id_cliente) {
-        $sql = "SELECT id, id_servico, dia, hora FROM agendamento WHERE id_cliente = ? AND CONCAT(dia, ' ', hora) > NOW()";
+        $sql = "SELECT id, id_servico, dia, hora FROM agendamento WHERE id_cliente = ? AND CONCAT(dia, ' ', hora) > NOW() ORDER BY dia ASC, hora ASC";
         $stmt = $conexao->prepare($sql);
         
         if ($stmt) {
@@ -75,21 +93,16 @@ class Agendamento {
         return [];
     }
     
-
-        // Função para listar agendamento por ID
-        public static function listarPorId($conexao, $id_agendamento) {
-            $query = "SELECT * FROM agendamento WHERE id = ?";
-            $stmt = mysqli_prepare($conexao, $query);
-            mysqli_stmt_bind_param($stmt, 'i', $id_agendamento);
-            mysqli_stmt_execute($stmt);
-            $resultado = mysqli_stmt_get_result($stmt);
-            
-            return mysqli_fetch_assoc($resultado); // Retorna um único agendamento
-        }
-    
-        // Outras funções do modelo (listar todos, listar por cliente, etc.)
-    
-    
+    // Função para listar agendamento por ID
+    public static function listarPorId($conexao, $id_agendamento) {
+        $query = "SELECT * FROM agendamento WHERE id = ?";
+        $stmt = mysqli_prepare($conexao, $query);
+        mysqli_stmt_bind_param($stmt, 'i', $id_agendamento);
+        mysqli_stmt_execute($stmt);
+        $resultado = mysqli_stmt_get_result($stmt);
+        
+        return mysqli_fetch_assoc($resultado); // Retorna um único agendamento
+    }
     public static function atualizar($conexao, $id_agendamento, $id_servico, $data, $hora) {
         $query = "UPDATE agendamento SET id_servico = ?, dia = ?, hora = ? WHERE id = ?";
         $stmt = mysqli_prepare($conexao, $query);
@@ -104,6 +117,20 @@ class Agendamento {
         if ($stmt) {
             $count = 0;  // Inicializando a variável
             $stmt->bind_param("i", $id_cliente);
+            $stmt->execute();
+            $stmt->bind_result($count);
+            $stmt->fetch();
+            $stmt->close();
+            return $count;
+        }
+        return 0;
+    }
+    public static function totalAgendamentos ($conexao) {
+        $sql = "SELECT COUNT(*) FROM agendamento WHERE CONCAT(dia, ' ', hora) > NOW()";
+        $stmt = $conexao->prepare($sql);
+        
+        if ($stmt) {
+            $count = 0;  // Inicializando a variável
             $stmt->execute();
             $stmt->bind_result($count);
             $stmt->fetch();

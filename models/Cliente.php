@@ -5,12 +5,14 @@ class Cliente {
     public $nome;
     public $email;
     private $senha;
+    private $root;
 
-    public function __construct($nome, $email, $senha, $id = null) {
+    public function __construct($nome, $email, $senha, $id = null, $root = 0) {
         $this->nome = $nome;
         $this->email = $email;
         $this->defineSenha($senha);
         $this->id = $id;
+        $this->root = $root;
     }
 
     public function defineSenha($senha) {
@@ -18,7 +20,13 @@ class Cliente {
             $this->senha = password_hash($senha, PASSWORD_BCRYPT);
         }
     }
-
+    public static function get_cliente_by_id($conexao, $id) {
+        $stmt = $conexao->prepare("SELECT * FROM cliente WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        return $resultado->fetch_assoc();
+    }
     public function cadastrar($conexao) {
         $stmt = $conexao->prepare("INSERT INTO cliente (nome, email, senha) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $this->nome, $this->email, $this->senha);
@@ -35,7 +43,7 @@ class Cliente {
             $clienteData = $resultado->fetch_assoc();
             if (password_verify($senha, $clienteData['senha'])) {
                 $_SESSION['id_cliente'] = $clienteData['id'];
-                return new Cliente($clienteData['nome'], $clienteData['email'], $clienteData['senha'], $clienteData['id']);
+                return new Cliente($clienteData['nome'], $clienteData['email'], $clienteData['senha'], $clienteData['id'], $clienteData['root']);
             }
         }
         
@@ -53,5 +61,11 @@ class Cliente {
             $stmt->bind_param("sssi", $this->nome, $this->email, $this->senha, $this->id);
         }
         return $stmt->execute();
+    }
+    public function isRoot () {
+        if ($this->root == 1) {
+            return true;
+        }
+        return false;
     }
 }
