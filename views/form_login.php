@@ -49,7 +49,7 @@
             </div>
         </div>
     </nav>
-    <div class="">
+    <div class="flex-grow-1 d-flex align-items-center justify-content-center">
     <div class=" container  d-flex align-items-center justify-content-center my-5 bg-opacity-75 ">
             <div class=" rounded col-10 col-lg-4 shadow-lg p-4 bg-white glass shadow-darker border  border-opacity-75">
                 <div class="">
@@ -97,7 +97,7 @@
                             unset($_SESSION['error_message']);
                         }
                     ?>
-                    <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
+                    <button type="submit" name="gravar" class="btn btn-primary w-100 mt-3">Entrar</button>
                 </form>
                 <hr class="w-75 m-auto">
                 <div class="my-2 text-center">
@@ -107,38 +107,36 @@
             </div>
     </div>
 </div>
-    <footer class="container-fluid text-light bg-dark ">
-    <div class="row py-3">
-        <div class="col-md-3 mb-3 text-center text-md-left">
-            <h3 class="fs-5">Termo de Responsabilidade</h3>
-            <a href="#" class="nav-link">Privacidade</a><br>
-            <a href="#" class="nav-link">Termos de Uso</a>
-        </div>
-        <hr class="w-75 mx-auto d-md-none">
-        <div class="col-md-3 mb-3 text-center text-md-left">
-            <h3 class="fs-5">Equipe</h3>
-            <a href="./sobre.php" class="nav-link">Sobre Nós</a>
-        </div>
-        <hr class="w-75 mx-auto d-md-none">
-        <div class="col-md-3 mb-3 text-center text-md-left">
-            <h3 class="fs-5">Feedback e Suporte</h3>
-            <a href="#" class="nav-link">Feedback e Avaliações</a><br>
-            <a href="#" class="nav-link">Suporte e Contato</a>
-        </div>
-        <hr class="w-75 mx-auto d-md-none">
-        <div class="col-md-3 mb-3 text-center text-md-left">
-            <h3 class="fs-5">Siga-nos nas Redes Sociais</h3>
-            <div class="btn-group border ">
-                <a href="https://instagram.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://linkedin.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-linkedin"></i></a>
+<footer class="container-fluid text-light bg-dark">
+        <div class="row py-3">
+            <div class="col-md-3 mb-3 text-center text-md-left">
+                <h3 class="fs-5">Termo de Responsabilidade</h3>
+                <a href="#" class="nav-link">Privacidade</a><br>
+                <a href="#" class="nav-link">Termos de Uso</a>
             </div>
+            <hr class="w-75 mx-auto d-md-none">
+            <div class="col-md-3 mb-3 text-center text-md-left">
+                <h3 class="fs-5">Equipe</h3>
+                <a href="./sobre.php" class="nav-link">Sobre Nós</a>
             </div>
-
-            <p>&copy; BarberGO 2024</p>
+            <hr class="w-75 mx-auto d-md-none">
+            <div class="col-md-3 mb-3 text-center text-md-left">
+                <h3 class="fs-5">Feedback e Suporte</h3>
+                <a href="#" class="nav-link">Feedback e Avaliações</a><br>
+                <a href="#" class="nav-link">Suporte e Contato</a>
+            </div>
+            <hr class="w-75 mx-auto d-md-none">
+            <div class="col-md-3 mb-3 text-center text-md-left">
+                <h3 class="fs-5">Siga-nos nas Redes Sociais</h3>
+                <div class="btn-group border">
+                    <a href="https://instagram.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="btn btn-warning fs-4 p-2 border"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <p>&copy; BarberGO 2024</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 <script>
 function togglePasswordVisibility() {
     const passwordInput = document.getElementById('senha');
