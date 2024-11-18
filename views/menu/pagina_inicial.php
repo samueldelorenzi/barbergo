@@ -6,6 +6,14 @@ require_once '../controllers/banco.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+// Flag para abrir o modal
+$abrirModal = false;
+
+// Verifica se existe uma mensagem de erro ou sucesso
+if (isset($_SESSION['success_message']) || isset($_SESSION['error_message'])) {
+    $abrirModal = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -69,8 +77,10 @@ error_reporting(E_ALL);
     </div>
 </div>
 
-     
-<div class="modal fade container-fluid mx-auto needs-validation" id="agendamentoModal" tabindex="-1" aria-labelledby="agendamentoModalLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade container-fluid mx-auto needs-validation" id="agendamentoModal" tabindex="-1" 
+     aria-labelledby="agendamentoModalLabel" aria-hidden="true" 
+     data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -122,21 +132,13 @@ error_reporting(E_ALL);
     </div>
 </div>
 
-
-    </div>
-</body>
-
-    <script>
-  
+<script>
     (function () {
-        'use strict'
+        'use strict';
         window.addEventListener('load', function () {
-           
             var forms = document.getElementsByClassName('needs-validation');
-           
-            var validation = Array.prototype.filter.call(forms, function (form) {
+            Array.prototype.filter.call(forms, function (form) {
                 form.addEventListener('submit', function (event) {
-                    
                     if (form.checkValidity() === false) {
                         event.preventDefault();
                         event.stopPropagation();
@@ -145,8 +147,14 @@ error_reporting(E_ALL);
                 }, false);
             });
         }, false);
+
+        // Força abertura do modal se houver mensagem de erro ou sucesso
+        $(document).ready(function () {
+            <?php if ($abrirModal): ?>
+                $('#agendamentoModal').modal('show');
+            <?php endif; ?>
+        });
     })();
-
-
 </script>
+</body>
 </html>
