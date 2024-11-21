@@ -78,3 +78,8 @@ body {
     margin: 0 auto 10px;
     border-radius: 5px;
 }
+
+.bg-chocolate {
+    background-color: #D2691E;
+    color: white;
+}

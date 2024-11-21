@@ -82,41 +82,52 @@ if (isset($_SESSION['success_message']) || isset($_SESSION['error_message'])) {
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form method="POST" action="../controllers/agendamento.php" class="needs-validation" novalidate autocomplete="on">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fa-solid fa-calendar-day"></i></span>
-                            <input type="date" class="form-control" id="data" name="data" required>
-                            <div class="invalid-feedback">Por favor, selecione uma data.</div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
-                            <input type="time" class="form-control" id="hora" name="hora" required>
-                            <div class="invalid-feedback">Por favor, selecione um horário.</div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fa-solid fa-cut"></i></span>
-                            <select class="form-control" id="servico" name="servico" required>
-                                <option value="1">Corte de Cabelo</option>
-                                <option value="2">Barba</option>
-                                <option value="3">Corte + Barba</option>
-                            </select>
-                            <div class="invalid-feedback">Por favor, selecione um serviço.</div>
-                        </div>
-                        <?php
-                        if (isset($_SESSION['success_message'])) {
-                            echo '<p class="text-success text-center">' . $_SESSION['success_message'] . '</p>';
-                            unset($_SESSION['success_message']);
-                        } elseif (isset($_SESSION['error_message'])) {
-                            echo '<p class="text-danger text-center">' . $_SESSION['error_message'] . '</p>';
-                            unset($_SESSION['error_message']);
-                        }
-                        ?>
-                        <div class="text-center">
-                            <button type="submit" name="gravar" class="btn btn-primary w-50 mt-3 p-2">Salvar alterações</button>
-                        </div>
-                    </form>
-                </div>
+                <div class="modal-body p-4">
+    <form method="POST" action="../controllers/agendamento.php" class="needs-validation" novalidate autocomplete="on">
+        <!-- Campo de Data -->
+        <div class="mb-3">
+            <label for="data" class="form-label fw-bold">Escolha a data:</label>
+            <div class="input-group">
+                <span class="input-group-text bg-light"><i class="fa-solid fa-calendar-day"></i></span>
+                <input type="date" class="form-control" id="data" name="data" required>
+                <div class="invalid-feedback">Por favor, selecione uma data.</div>
+            </div>
+        </div>
+
+        <!-- Campo de Horários -->
+        <div class="mb-3">
+            <label class="form-label fw-bold d-block">Escolha um horário:</label>
+            <div id="horarios-container" class="d-flex flex-wrap gap-2">
+                <!-- Os horários serão carregados aqui dinamicamente -->
+                <p class="text-muted">Selecione uma data para ver os horários disponíveis.</p>
+            </div>
+            <div class="invalid-feedback">Por favor, selecione um horário.</div>
+        </div>
+
+        <!-- Campo de Serviço -->
+        <div class="mb-3">
+            <label for="servico" class="form-label fw-bold">Selecione o serviço:</label>
+            <div class="input-group">
+                <span class="input-group-text bg-light"><i class="fa-solid fa-cut"></i></span>
+                <select class="form-select" id="servico" name="servico" required>
+                    <option value="">Escolha...</option>
+                    <option value="1">Corte de Cabelo</option>
+                    <option value="2">Barba</option>
+                    <option value="3">Corte + Barba</option>
+                </select>
+                <div class="invalid-feedback">Por favor, selecione um serviço.</div>
+            </div>
+        </div>
+
+        <!-- Botão de Submissão -->
+        <div class="text-center">
+            <button type="submit" name="gravar" class="btn btn-primary w-50 mt-3 p-2 shadow-sm">
+                <i class="fa-solid fa-check"></i> Salvar alterações
+            </button>
+        </div>
+    </form>
+</div>
+
             </div>
         </div>
     </div>
@@ -143,6 +154,53 @@ if (isset($_SESSION['success_message']) || isset($_SESSION['error_message'])) {
                 <?php endif; ?>
             });
         })();
+    </script>
+    <script>
+     document.getElementById('data').addEventListener('change', function () {
+    const selectedDate = this.value;
+    console.log('Data selecionada:', selectedDate);  // Verifique o valor aqui
+    const horariosContainer = document.getElementById('horarios-container');
+
+    horariosContainer.innerHTML = '<p class="text-muted">Carregando horários...</p>';
+
+    fetch(`../helpers/gethorarios.php?data=${selectedDate}`)
+        .then(response => response.json())
+        .then(data => {
+            horariosContainer.innerHTML = '';
+            if (data.error) {
+                horariosContainer.innerHTML = `<p class="text-danger">${data.error}</p>`;
+                return;
+            }
+            data.forEach(item => {
+                const radioWrapper = document.createElement('div');
+                radioWrapper.className = 'form-check form-check-inline';
+
+                const radioInput = document.createElement('input');
+                radioInput.type = 'radio';
+                radioInput.name = 'hora';
+                radioInput.id = `hora-${item.time}`;
+                radioInput.value = item.time;
+                radioInput.className = 'form-check-input';
+                if (item.disabled) {
+                    radioInput.disabled = true;
+                }
+
+                const radioLabel = document.createElement('label');
+                radioLabel.htmlFor = `hora-${item.time}`;
+                radioLabel.className = `form-check-label badge ${item.disabled ? 'bg-secondary text-muted' : 'bg-primary text-white'} p-2`;
+                radioLabel.textContent = item.time;
+
+                radioWrapper.appendChild(radioInput);
+                radioWrapper.appendChild(radioLabel);
+                horariosContainer.appendChild(radioWrapper);
+            });
+        })
+        .catch(err => {
+            horariosContainer.innerHTML = `<p class="text-danger">Erro ao carregar horários. Tente novamente mais tarde.</p>`;
+            console.error(err);
+        });
+});
+
     </script>
 </body>
 
