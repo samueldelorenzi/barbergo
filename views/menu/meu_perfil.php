@@ -24,24 +24,24 @@ error_reporting(E_ALL);
 </head>
 
 <body>
-    <div class="toast-container">
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
         <?php if (isset($_SESSION['success_message'])): ?>
-            <div class="toast align-items-center text-bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast text-center bg-green fw-bold justify-content-center align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="d-flex">
                     <div class="toast-body text-center w-100">
                         <?php echo $_SESSION['success_message']; ?>
                     </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white me-3 my-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
             <?php unset($_SESSION['success_message']); ?>
         <?php elseif (isset($_SESSION['error_message'])): ?>
-            <div class="toast align-items-center text-bg-danger border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast text-center text-bg-danger fw-bold justify-content-center align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="d-flex">
                     <div class="toast-body text-center w-100">
                         <?php echo $_SESSION['error_message']; ?>
                     </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white me-3 my-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
             <?php unset($_SESSION['error_message']); ?>

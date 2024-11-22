@@ -42,6 +42,19 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
         </div>
     </nav>
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+        <?php if (isset($_SESSION['error_message'])): ?>
+            <div class="toast text-center text-bg-danger fw-bold justify-content-center align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body text-center w-100">
+                        <?php echo $_SESSION['error_message']; ?>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-3 my-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php unset($_SESSION['error_message']); ?>
+        <?php endif; ?>
+    </div>
     <div class="flex-grow-1 d-flex align-items-center justify-content-center">
         <div class=" container  d-flex align-items-center justify-content-center my-5 bg-opacity-75 ">
             <div class=" rounded col-10 col-lg-4 shadow-lg p-4 bg-white glass shadow-darker border  border-opacity-75">
@@ -81,12 +94,6 @@ if (session_status() == PHP_SESSION_NONE) {
                         <input type="checkbox" name="remember" id="remember" class="form-check-input ">
                         <label for="remember" class="form-check-label">Lembrar de mim</label>
                     </div>
-                    <?php
-                    if (isset($_SESSION['error_message'])) {
-                        echo '<div style="text-align: center;"><p style="color: #b82222;">' . $_SESSION['error_message'] . '</p></div>';
-                        unset($_SESSION['error_message']);
-                    }
-                    ?>
                     <button type="submit" name="gravar" class="btn btn-primary w-100 mt-3">Entrar</button>
                 </form>
                 <hr class="w-75 m-auto">
@@ -142,6 +149,18 @@ if (session_status() == PHP_SESSION_NONE) {
                 toggleIcon.classList.add('fa-eye');
             }
         }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            const toastElList = [].slice.call(document.querySelectorAll('.toast'));
+            toastElList.forEach(function(toastEl) {
+                const toast = new bootstrap.Toast(toastEl);
+                toast.show();
+
+                setTimeout(() => {
+                    toast.dispose();
+                }, 5000);
+            });
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/valid.js"></script>
