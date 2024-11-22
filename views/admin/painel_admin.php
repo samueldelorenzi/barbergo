@@ -1,20 +1,18 @@
 <?php
-include '../helpers/auxiliares.php';
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-date_default_timezone_set('America/Sao_Paulo');
-
-$pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 'inicio';
+include '../../helpers/auxiliares.php';
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+$selectedDate = isset($_POST['data']) ? new DateTime($_POST['data']) : new DateTime();
+
 if (!isset($_SESSION['usuario_logado'])) {
-    header("Location: form_login.php");
+    header("Location: ../form_login.php");
     exit();
 }
 
@@ -25,20 +23,19 @@ if (isset($_SESSION['id_cliente'])) {
     exit();
 }
 
+date_default_timezone_set('America/Sao_Paulo');
+
+$pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 'inicio';
+
 switch ($pagina) {
     case 'agendamento':
-        $conteudo = 'menu/meus_agendamentos.php';
-        break;
-    case 'perfil':
-        $conteudo = 'menu/meu_perfil.php';
-        break;
-    case "edit":
-        $conteudo = 'menu/edit.php';
+        $conteudo = 'menu/agendamentos.php';
         break;
     default:
         $conteudo = 'menu/pagina_inicial.php';
         break;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -47,12 +44,12 @@ switch ($pagina) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BarberGO - Painel do usuário</title>
+    <title>BarberGO - Painel do admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2.0/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../assets/img/icone.png" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/css/style-painel-usuario.css">
+    <link rel="shortcut icon" href="../../assets/img/icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/style-painel-usuario.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed mb-lg-3">
@@ -66,16 +63,15 @@ switch ($pagina) {
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <?php echo $_SESSION['usuario_email']; ?>
+                        <?php
+                        echo $_SESSION['usuario_email'];
+                        ?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="?pagina=perfil" class="dropdown-item">
-                            <i class="fas fa-user-circle mr-2"></i> Meu Perfil
-                        </a>
                         <a href="?pagina=agendamento" class="dropdown-item">
                             <i class="fas fa-calendar-alt mr-2"></i> Meus Agendamentos
                         </a>
-                        <a href="../controllers/logout.php" class="dropdown-item text-danger">
+                        <a href="../../controllers/logout.php" class="dropdown-item text-danger">
                             <i class="fas fa-sign-out-alt mr-2"></i> Sair
                         </a>
                     </div>
@@ -83,8 +79,8 @@ switch ($pagina) {
             </ul>
         </nav>
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <a href="../controllers/logout.php" class="brand-link d-flex align-content-center ">
-                <img src="../assets/img/icone.png" alt="Logo" class="brand-image img-circle elevation-3 mt-2">
+            <a href="../../controllers/logout.php" class="brand-link d-flex align-content-center ">
+                <img src="../../assets/img/icone.png" alt="Logo" class="brand-image img-circle elevation-3 mt-2">
                 <p class="text-white fw-bold my-auto fs-3 ms-2">BarberGO</p>
             </a>
             <div class="sidebar">
@@ -99,13 +95,7 @@ switch ($pagina) {
                         <li class="nav-item">
                             <a href="?pagina=agendamento" class="nav-link <?php echo $pagina == 'agendamento' ? 'active' : ''; ?>">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
-                                <p>Meus Agendamentos</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="?pagina=perfil" class="nav-link <?php echo $pagina == 'perfil' ? 'active' : ''; ?>">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>Meu Perfil</p>
+                                <p>Agendamentos</p>
                             </a>
                         </li>
                     </ul>
