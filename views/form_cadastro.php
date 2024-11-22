@@ -42,6 +42,29 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
         </div>
     </nav>
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+        <?php if (isset($_SESSION['success_message'])): ?>
+            <div class="toast text-center bg-green fw-bold justify-content-center align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body text-center w-100">
+                        <?php echo $_SESSION['success_message']; ?>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-3 my-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php unset($_SESSION['success_message']); ?>
+        <?php elseif (isset($_SESSION['error_message'])): ?>
+            <div class="toast text-center text-bg-danger fw-bold justify-content-center align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body text-center w-100">
+                        <?php echo $_SESSION['error_message']; ?>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-3 my-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            <?php unset($_SESSION['error_message']); ?>
+        <?php endif; ?>
+    </div>
     <div class="flex-grow-1 d-flex align-items-center justify-content-center">
         <div class="container d-flex align-items-center justify-content-center my-5">
             <div class="rounded col-10 col-lg-4 shadow-lg p-4 bg-white glass shadow-darker border border-opacity-75">
@@ -68,15 +91,6 @@ if (session_status() == PHP_SESSION_NONE) {
                         <div class="invalid-feedback">Campo obrigatório.</div>
                         <div class="valid-feedback">Preenchido.</div>
                     </div>
-                    <?php
-                    if (isset($_SESSION['success_message'])) {
-                        echo '<p class="text-success text-center">' . $_SESSION['success_message'] . '</p>';
-                        unset($_SESSION['success_message']);
-                    } elseif (isset($_SESSION['error_message'])) {
-                        echo '<p class="text-danger text-center">' . $_SESSION['error_message'] . '</p>';
-                        unset($_SESSION['error_message']);
-                    }
-                    ?>
                     <button type="submit" name="gravar" class="btn btn-primary w-100 mt-3">Cadastrar-se</button>
                 </form>
                 <hr class="w-75 m-auto">
@@ -133,6 +147,18 @@ if (session_status() == PHP_SESSION_NONE) {
                 toggleIcon.classList.add('fa-eye');
             }
         }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const toastElList = [].slice.call(document.querySelectorAll('.toast'));
+            toastElList.forEach(function(toastEl) {
+                const toast = new bootstrap.Toast(toastEl);
+                toast.show();
+
+                setTimeout(() => {
+                    toast.dispose();
+                }, 5000);
+            });
+        });
     </script>
 </body>
 </html>

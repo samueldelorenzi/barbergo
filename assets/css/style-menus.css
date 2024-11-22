@@ -83,3 +83,12 @@ body {
     background-color: #D2691E;
     color: white;
 }
+
+.bg-green {
+    background-color: #28a745 !important;
+    color: white !important;
+}
+
+.btn-primary:focus {
+    background-color: #904b1a !important;
+}
