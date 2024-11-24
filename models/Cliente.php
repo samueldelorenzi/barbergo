@@ -23,6 +23,12 @@ class Cliente
             $this->senha = password_hash($senha, PASSWORD_BCRYPT);
         }
     }
+    public static function definesenhaBanco($conexao, $senha, $id)
+    {
+        $stmt = $conexao->prepare("UPDATE cliente SET senha = ? WHERE id = ?");
+        $stmt->bind_param("si", $senha, $id);
+        return $stmt->execute();
+    }
     public static function get_cliente_by_id($conexao, $id)
     {
         $stmt = $conexao->prepare("SELECT * FROM cliente WHERE id = ?");
