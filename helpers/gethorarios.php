@@ -55,6 +55,11 @@ while ($current <= $end) {
     {
         $disabled = in_array($timeValue, $reservedTimes) || in_array($timeValue, ['12:00', '12:30']);
     }
+
+    if (date('w', strtotime($data)) == 0) 
+    {
+        $disabled = true;
+    }
     
     $availableTimes[] = [
         'time' => $timeValue,
