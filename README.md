@@ -22,14 +22,18 @@
 - Gerenciamento de horários para barbearias.
 - Cadastro e consulta de clientes.
 - Histórico de agendamentos.
+- Login de clientes.
+- Edição e cancelamento de horários.
+- Agendamento dinâmico de cortes.
 - Integração com banco de dados MySQL para persistência dos dados.
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **PHP**: Lógica de backend para o funcionamento da aplicação.
-- **HTML e CSS**: Interface do usuário e estilização.
-- **MVC (Model-View-Controller)**: Arquitetura utilizada para separar as responsabilidades do sistema.
-- **MySQL**: Banco de dados para armazenar informações de clientes e agendamentos.
+- **PHP**: Responsável pela lógica de backend, garantindo o funcionamento da aplicação.  
+- **HTML e CSS**: Utilizados para construir a interface do usuário e sua estilização, proporcionando uma experiência agradável.  
+- **Bootstrap**: Framework front-end para facilitar a criação de layouts responsivos e modernos.  
+- **Arquitetura MVC (Model-View-Controller)**: Estrutura adotada para organizar o código e separar as responsabilidades, melhorando a manutenção e escalabilidade do sistema.  
+- **MySQL**: Banco de dados utilizado para gerenciar e armazenar informações de clientes e agendamentos.
 
 ## 📅 Ajustes e Melhorias
 
