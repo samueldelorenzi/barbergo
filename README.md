@@ -37,6 +37,8 @@ O projeto está em desenvolvimento contínuo. Futuras atualizações incluirão:
 
 - [ ] Envio de notificações de lembrete.
 - [ ] Envio de e-mails de lembrete.
+- [ ] Recuperação de senha.
+- [ ] Personalização de páginas.
 
 ## 💻 Pré-requisitos
 
