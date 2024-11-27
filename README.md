@@ -43,6 +43,7 @@ O projeto está em desenvolvimento contínuo. Futuras atualizações incluirão:
 - [ ] Envio de e-mails de lembrete.
 - [ ] Recuperação de senha.
 - [ ] Personalização de páginas.
+- [ ] Escolha de profissional ao agendar horário.
 
 ## 💻 Pré-requisitos
 
