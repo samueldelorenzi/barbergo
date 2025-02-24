@@ -97,7 +97,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="https://www.linkedin.com/in/paulo-m%C3%A1rio-valente-bumba-126405260/" title="LinkedIn">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGrUmzQ8aWS-A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729769698428?e=1735171200&v=beta&t=jkb-a_czGO2KPdmOEJTtqdiXa2uyKwKLbWQ8onjDLis" width="100px;" alt="Foto do Paulo"/><br>
+        <img src="assets/img/Equipa/paulo.jpg" alt="Foto do Paulo" style="width: 100px; height: 100px; object-fit: cover;"/><br>
         <sub>
           <b>Paulo Bumba</b>
         </sub>
@@ -105,7 +105,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="https://www.linkedin.com/in/samueldelorenzi/" title="LinkedIn">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFdYE7vQTyqXA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720058448969?e=1733961600&v=beta&t=ccVL8BjRvxFrMiyfSQ3QXLb00gIk7OWkcdG2BSm7iuE" width="100px;" alt="Foto do Samuel"/><br>
+        <img src="assets/img/Equipa/samuel.jpg" width="100px;" alt="Foto do Samuel"/><br>
         <sub>
           <b>Samuel De Lorenzi</b>
         </sub>
@@ -113,7 +113,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="https://www.linkedin.com/in/wesllen-felipe-langaro-raiser-da-cruz-31b9ab210/" title="LinkedIn">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGOczBgQCBtSA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1665170990118?e=1733961600&v=beta&t=ZGNdDzQgZ19OCEaK7UHcI8kFYdoBlPYAR1G6WYM6Nd0" width="100px;" alt="Foto do Wesllen"/><br>
+        <img src="assets/img/Equipa/wesllen.jpg" width="100px;" alt="Foto do Wesllen"/><br>
         <sub>
           <b>Wesllen Langaro</b>
         </sub>
@@ -121,7 +121,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="https://www.linkedin.com/in/willian-ferreira-a09730219" title="LinkedIn">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFHeGRyYIMzMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718290863814?e=1733961600&v=beta&t=Aon4DgIZRcGf4rF0RQBJAMFzWALMtXaUpSGHtl-9T7E" width="100px;" alt="Wilian foto"/><br>
+        <img src="assets/img/Equipa/willian.jpg" width="100px;" alt="Wilian foto"/><br>
         <sub>
           <b>Willian Ferreira</b>
         </sub>
